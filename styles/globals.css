@@ -1,36 +1,39 @@
 @font-face {
-  font-family: 'Open Sans', sans-serif;
-  src: url('../public/fonts/OpenSans-Regular.woff'), url('../public/fonts/OpenSans-Regular.woff2');
+  font-family: "Open Sans", sans-serif;
+  src: url("../public/fonts/OpenSans-Regular.woff"),
+    url("../public/fonts/OpenSans-Regular.woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans', sans-serif;
-  src: url('../public/fonts/OpenSans-SemiBold.woff'), url('../public/fonts/OpenSans-SemiBold.woff2');
+  font-family: "Open Sans", sans-serif;
+  src: url("../public/fonts/OpenSans-SemiBold.woff"),
+    url("../public/fonts/OpenSans-SemiBold.woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto', sans-serif;
-  src: url('../public/fonts/Roboto-Medium.woff'), url('../public/fonts/Roboto-Medium.woff2');
+  font-family: "Roboto", sans-serif;
+  src: url("../public/fonts/Roboto-Medium.woff"),
+    url("../public/fonts/Roboto-Medium.woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
 
-  --white: #FFFFFF;
-  --barely-blue: #E5E5E5;
-  --blue: #5DAAFF;
-  --dark-blue: #2876CC;
-  --barely-grey: #F8FAFF;
-  --light-grey: #B7B7B7;
-  --grey: #606F7A;
+  --white: #ffffff;
+  --barely-blue: #e5e5e5;
+  --blue: #5daaff;
+  --dark-blue: #2876cc;
+  --barely-grey: #f8faff;
+  --light-grey: #b7b7b7;
+  --grey: #606f7a;
 }
