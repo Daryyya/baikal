@@ -9,9 +9,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
- max-width: 1440px;
- margin: 0 auto;
-    padding: 110px 97px 0;`;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 110px 97px 0;
+    position: relative`;
 
 export const BackgroundImage = styled(Image)`
     object-fit: contain;
