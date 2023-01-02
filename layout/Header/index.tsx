@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../../public/img/logo.png";
-import Button from "../../kit/Button";
+import Link from "../../kit/Link";
 import { StyledHeader, Container } from "./style";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
     <StyledHeader>
       <Container>
         <Image src={logo} alt="logo" width={163} height={40} />
-        <Button page="/contact" />
+        <Link page="/contact" variant='white'>Связаться</Link>
       </Container>
     </StyledHeader>
   );

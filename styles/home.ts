@@ -16,6 +16,7 @@ export const Container = styled.div`
 export const BackgroundImage = styled(Image)`
     object-fit: contain;
     object-position: right bottom;
+    pointer-events: none;
 `;
 
 export const Title = styled.h1`
