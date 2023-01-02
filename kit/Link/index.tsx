@@ -1,9 +1,10 @@
 import React, { FC, ReactNode } from "react";
-import { StyledLink, StyledLinkProps } from "./style";
+import { StyledLinkOrButtonProps } from "../buttonAndLinkCommonStyle";
+import { StyledLink } from "./style";
 
 interface Props {
   page: string;
-  variant: StyledLinkProps["variant"];
+  variant: StyledLinkOrButtonProps["variant"];
   children: ReactNode;
 }
 
