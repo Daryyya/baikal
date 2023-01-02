@@ -28,9 +28,7 @@
 :root {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-
   --header-height: 137px;
-
   --white: #ffffff;
   --barely-blue: #e5e5e5;
   --semilight-blue: #eff3f8;

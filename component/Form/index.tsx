@@ -1,12 +1,10 @@
-import React, { FormEventHandler } from "react";
+import React, { Children, FormEventHandler } from "react";
 import { useRouter } from 'next/router'
-import { StyledForm } from "./style";
-import Button from "../../kit/Button";
+import { StyledForm, Input, Button } from "./style";
 import Select from "../../kit/Select";
 import { currencies } from "./currencies";
 
 const Form = () => {
-
   const router = useRouter()
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
@@ -17,9 +15,10 @@ const Form = () => {
   
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <Select options={currencies} hasArrow={false}/>
-      <Select options={currencies} />
-      <Select options={currencies} />
+      <Select options={currencies} hasArrow={false} topTitle='Откуда'/>
+      <Select options={currencies} topTitle='Куда'/>
+      <Select options={currencies} topTitle='Валюта'/>
+      <Input topTitle="Курс" />
       <Button variant="blue" type='submit' >
         Далее
         <svg
