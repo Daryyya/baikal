@@ -1,16 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import Head from "next/head";
+import Form from "../component/Form";
+import backgroundImage from '../public/img/bg-home.png';
+import { Title, Wrapper, Container, BackgroundImage } from "../styles/home";
+// import { Inter } from "@next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+// const font = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Baikal home page</title>
+        <title>Байкал</title>
       </Head>
-      home page content
+      <Wrapper>
+        <BackgroundImage src={backgroundImage} alt='' fill />
+        <Container>
+          <Title>Рассчитайте<br/>стоимость доставки из Китая</Title>
+          <Form/>
+        </Container>
+      </Wrapper>
     </>
-  )
+  );
 }

@@ -28,12 +28,14 @@
 :root {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-
+  --header-height: 137px;
   --white: #ffffff;
   --barely-blue: #e5e5e5;
+  --semilight-blue: #eff3f8;
   --blue: #5daaff;
   --dark-blue: #2876cc;
   --barely-grey: #f8faff;
+  --ebeb-grey: #EBEBEB;
   --light-grey: #b7b7b7;
   --grey: #606f7a;
 }

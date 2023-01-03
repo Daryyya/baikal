@@ -1,16 +1,18 @@
-import React, { FC } from "react";
-import Link from "next/link";
-import { Wrapper } from "./style";
+import React, { FC, ReactNode, ButtonHTMLAttributes } from "react";
+import { StyledLinkOrButtonProps } from "../buttonAndLinkCommonStyle";
+import { StyledButton } from "./style";
 
-interface Props {
-  page: string;
+
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant: StyledLinkOrButtonProps["variant"];
+  children: ReactNode;
 }
 
-const Button: FC<Props> = ({ page }) => {
+const Button: FC<Props> = ({ variant, children, ...restProps}) => {
   return (
-    <Wrapper>
-      <Link href={page}>Связаться</Link>
-    </Wrapper>
+    <StyledButton {...restProps} variant={variant} type='submit'>
+        {children}
+    </StyledButton>
   );
 };
 
