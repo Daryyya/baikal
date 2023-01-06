@@ -1,24 +1,44 @@
-import React, { Children, FormEventHandler } from "react";
+import React from "react";
 import { useRouter } from 'next/router'
-import { StyledForm, Input, Button } from "./style";
-import Select from "../../kit/Select";
+import { StyledForm, Button } from "./style";
+import ControlledSelect from "./ControlledSelect";
 import { currencies } from "./currencies";
+import { useForm, SubmitHandler, useWatch } from "react-hook-form";
+import ControlledInput from "./ControlledInput";
+
+interface Fields {
+  from: string;
+  to: string;
+  currency: string;
+  rate: number;
+}
 
 const Form = () => {
+
   const router = useRouter()
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault();
-    router.push('/order')
+  const {register, handleSubmit, control, setValue} = useForm<Fields>({
+    defaultValues: {
+      from: '',
+      to: 'Москва',
+      currency: 'USD',
+      rate: 0,
+    }
+  })
+  const {currency} = useWatch({control})
+
+  const onSubmit: SubmitHandler<Fields> = (data) => {
+    // console.log(data)
+    // router.push('/order')
   }
 
   
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <Select options={currencies} hasArrow={false} topTitle='Откуда'/>
-      <Select options={currencies} topTitle='Куда'/>
-      <Select options={currencies} topTitle='Валюта'/>
-      <Input topTitle="Курс" />
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <ControlledSelect control={control} options={currencies} hasArrow={false} topTitle='Откуда' name='from'/>
+      <ControlledSelect control={control} options={currencies} topTitle='Куда' name='to'/>
+      <ControlledSelect control={control} options={currencies} topTitle='Валюта' name='currency'/>
+      <ControlledInput register={register} selectValue={currency || ''} onUpdate={(rate) => setValue('rate', rate)}/>
       <Button variant="blue" type='submit' >
         Далее
         <svg
@@ -31,7 +51,7 @@ const Form = () => {
           <path
             d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10"
             stroke="white"
-            stroke-width="1.5"
+            strokeWidth="1.5"
           />
         </svg>
       </Button>
