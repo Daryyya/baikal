@@ -7,7 +7,7 @@ export interface Fields {
   rate: number;
 }
 
-class FormData {
+class DirectionFormData {
   private state: Fields = {
     from: "", 
     to: "Москва",
@@ -28,4 +28,4 @@ class FormData {
   }
 }
 
-export const myFormData = new FormData();
+export const myDirectionFormData = new DirectionFormData();

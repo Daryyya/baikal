@@ -1,21 +1,21 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { StyledForm, Button, StyledTooltipOne, StyledSvgOne, StyledTooltipTwo, StyledSvgTwo } from "./style";
-import ControlledSelect from "./ControlledSelect";
-import { currencies } from "./currencies";
+import { StyledForm, StyledButton, StyledTooltipOne, StyledSvgOne, StyledTooltipTwo, StyledSvgTwo } from "./style";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
-import { Fields } from "../../store/formData";
-import { myFormData } from "../../store/formData";
+import ControlledSelect from "./ControlledSelect";
+import { currencies } from "./currencies";
+import { Fields } from "../../store/directionFormData";
+import { myDirectionFormData } from "../../store/directionFormData";
 import { observer } from "mobx-react";
 
 const Form = observer(() => {
-
   const router = useRouter();
 
   const { register, handleSubmit, control, setValue, formState } =
     useForm<Fields>({
       defaultValues: {
+        from: '',
         to: "Москва",
         currency: "USD",
         rate: 0,
@@ -27,7 +27,7 @@ const Form = observer(() => {
   const { isDirty, errors } = formState;
 
   const onSubmit: SubmitHandler<Fields> = (data) => {
-    myFormData.setState(data);
+    myDirectionFormData.setState(data);
     router.push('/order');
   };
 
@@ -57,7 +57,7 @@ const Form = observer(() => {
         selectValue={currency || ""}
         onUpdate={(rate) => setValue("rate", rate)}
       />
-      <Button variant="blue" type="submit">
+      <StyledButton variant="blue" type="submit">
         Далее
         <svg
           width="27"
@@ -72,7 +72,7 @@ const Form = observer(() => {
             strokeWidth="1.5"
           />
         </svg>
-      </Button>
+      </StyledButton>
       { errors.from && (
         <StyledTooltipOne>
           Для начала заполните поля выше
@@ -83,8 +83,8 @@ const Form = observer(() => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5" />
-            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5" />
+            <path d="M6 2V22" stroke="#5DAAFF" strokeWidth="1.5" />
+            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" strokeWidth="1.5" />
           </StyledSvgOne>
         </StyledTooltipOne>
       )}
@@ -98,8 +98,8 @@ const Form = observer(() => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5" />
-            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5" />
+            <path d="M6 2V22" stroke="#5DAAFF" strokeWidth="1.5" />
+            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" strokeWidth="1.5" />
           </StyledSvgTwo>
         </StyledTooltipTwo>
       )}

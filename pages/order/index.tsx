@@ -1,14 +1,24 @@
-import { observer } from 'mobx-react';
-import React from 'react';
-import { myFormData } from '../../store/formData';
+import React, { useState } from "react";
+import SearchForm from "../../component/SearchForm";
+import { Container, RightColumn, LeftColumn, Title } from "./style";
+import CardList from "../../component/CardList";
+import OrderForm from "../../component/OrderForm";
 
-const Order = observer(() => {
-  const state = myFormData.getState();
+const Order = () => {
+  const [searchValue, setSearchValue] = useState('');
   return (
-    <div>
-      {JSON.stringify(state, null, 2)}
-    </div>
-  )
-});
+    <Container>
+      <LeftColumn>
+        <Title>Выберите мебель, которую нужно перевезти</Title>
+        <SearchForm setSearchValue={setSearchValue}/>
+        <CardList searchValue={searchValue}/>
+      </LeftColumn>
+      <RightColumn>
+        <Title>Затем заполните следующие поля выбранного элемента:</Title>
+        <OrderForm/>
+      </RightColumn>
+    </Container>
+  );
+};
 
-export default Order
+export default Order;
