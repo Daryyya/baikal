@@ -1,6 +1,6 @@
 import React from "react";
-import { useRouter } from 'next/router'
-import { StyledForm, Button } from "./style";
+import { useRouter } from "next/router";
+import { StyledForm, Button, StyledTooltipOne, StyledSvgOne, StyledTooltipTwo, StyledSvgTwo } from "./style";
 import ControlledSelect from "./ControlledSelect";
 import { currencies } from "./currencies";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
@@ -14,33 +14,53 @@ interface Fields {
 }
 
 const Form = () => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const {register, handleSubmit, control, setValue, formState} = useForm<Fields>({
-    defaultValues: {
-      from: '',
-      to: 'Москва',
-      currency: 'USD',
-      rate: 0,
-    }
-  })
-  const {currency} = useWatch({control})
+  const { register, handleSubmit, control, setValue, formState } =
+    useForm<Fields>({
+      defaultValues: {
+        to: "Москва",
+        currency: "USD",
+        rate: 0,
+      },
+      mode: 'all'
+    });
+  const { currency } = useWatch({ control });
+
+  const { isValid, isDirty, errors } = formState;
 
   const onSubmit: SubmitHandler<Fields> = (data) => {
-    // console.log(data)
+    console.log(data, formState);
     // router.push('/order')
-  }
+  };
 
-  console.log(formState.errors);
-
-  
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <ControlledSelect control={control} options={currencies} hasArrow={false} topTitle='Откуда' name='from'/>
-      <ControlledSelect control={control} options={currencies} topTitle='Куда' name='to'/>
-      <ControlledSelect control={control} options={currencies} topTitle='Валюта' name='currency'/>
-      <ControlledInput register={register} selectValue={currency || ''} onUpdate={(rate) => setValue('rate', rate)}/>
-      <Button variant="blue" type='submit' >
+      <ControlledSelect
+        control={control}
+        options={currencies}
+        hasArrow={false}
+        topTitle="Откуда"
+        name="from"
+      />
+      <ControlledSelect
+        control={control}
+        options={currencies}
+        topTitle="Куда"
+        name="to"
+      />
+      <ControlledSelect
+        control={control}
+        options={currencies}
+        topTitle="Валюта"
+        name="currency"
+      />
+      <ControlledInput
+        register={register}
+        selectValue={currency || ""}
+        onUpdate={(rate) => setValue("rate", rate)}
+      />
+      <Button variant="blue" type="submit">
         Далее
         <svg
           width="27"
@@ -56,6 +76,36 @@ const Form = () => {
           />
         </svg>
       </Button>
+      { errors.from && (
+        <StyledTooltipOne>
+          Для начала заполните поля выше
+          <StyledSvgOne
+            width="12"
+            height="22"
+            viewBox="0 0 12 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5" />
+            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5" />
+          </StyledSvgOne>
+        </StyledTooltipOne>
+      )}
+      {isDirty && Object.values(errors).length === 0 && (
+        <StyledTooltipTwo>
+          Теперь нажмите на кнопку “Далее”
+          <StyledSvgTwo
+            width="12"
+            height="22"
+            viewBox="0 0 12 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5" />
+            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5" />
+          </StyledSvgTwo>
+        </StyledTooltipTwo>
+      )}
     </StyledForm>
   );
 };
