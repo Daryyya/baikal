@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Button from "../../../kit/Button";
+import Button from "../../kit/Button";
 
 export const StyledForm = styled.form`
 display: flex;

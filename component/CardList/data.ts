@@ -1,14 +1,8 @@
-import { StaticImageData } from 'next/image';
 import item1 from '../../public/img/item1.jpg';
 import item2 from '../../public/img/item2.jpg';
 import item3 from '../../public/img/item3.jpg';
 import item4 from '../../public/img/item4.png';
-
-export interface Item {
-  id: number;
-  name: string;
-  image: StaticImageData;
-}
+import { Item } from '../../store/orderFormData';
 
 export const data:Item[] = [
   {

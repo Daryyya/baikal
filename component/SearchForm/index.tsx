@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import Input from '../../../kit/Input';
+import Input from '../../kit/Input';
 import { StyledForm, StyledButton } from './style';
 import {useForm, SubmitHandler} from 'react-hook-form';
 
@@ -21,7 +21,7 @@ const SerchForm: FC<Props> = ({setSearchValue}) => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-    <Input {...register('name')}/>
+    <Input {...register('name')} placeholder='Введите название'/>
       <StyledButton variant='blue' type='submit'>Поиск</StyledButton>
     </StyledForm>
   )

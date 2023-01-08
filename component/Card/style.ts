@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
+import Button from "../../kit/Button";
 
 export const Container = styled.div`
   display: flex;
@@ -18,5 +19,10 @@ export const StyledImage= styled(Image)`
 export const ItemName = styled.p`
   font-size: 17px;
   color: var(--grey);
+`;
+
+export const StyledButton = styled(Button)`
+  min-width: 137px;
+  padding: 14px 30px;
 `;
 

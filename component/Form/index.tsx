@@ -5,8 +5,8 @@ import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
 import ControlledSelect from "./ControlledSelect";
 import { currencies } from "./currencies";
-import { Fields } from "../../store/formData";
-import { myFormData } from "../../store/formData";
+import { Fields } from "../../store/directionFormData";
+import { myDirectionFormData } from "../../store/directionFormData";
 import { observer } from "mobx-react";
 
 const Form = observer(() => {
@@ -28,7 +28,7 @@ const Form = observer(() => {
   const { isDirty, errors } = formState;
 
   const onSubmit: SubmitHandler<Fields> = (data) => {
-    myFormData.setState(data);
+    myDirectionFormData.setState(data);
     router.push('/order');
   };
 
