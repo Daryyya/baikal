@@ -10,7 +10,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: FC<Props> = ({ variant, children, ...restProps}) => {
   return (
-    <StyledButton {...restProps} variant={variant} type='submit'>
+    <StyledButton {...restProps} variant={variant}>
         {children}
     </StyledButton>
   );

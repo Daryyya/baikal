@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import BaseButton from "../../kit/Button";
+import Button from "../../kit/Button";
 import Tooltip from "./Tooltip";
 
 export const StyledForm = styled.form`
@@ -9,7 +9,7 @@ export const StyledForm = styled.form`
   width: fit-content;
 `;
 
-export const Button = styled(BaseButton)`
+export const StyledButton = styled(Button)`
   height: 67px;
   margin-left: 12px;
 `;
