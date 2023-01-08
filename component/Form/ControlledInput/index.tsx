@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ControlledInput: FC<Props> = ({register, selectValue, onUpdate}) => {
-
+  //TODO: раскомментироать
   // useEffect(()=>{
   //   fetch(`https://api.apilayer.com/currency_data/live?base=USD`, {
   //     method: 'GET',
@@ -20,8 +20,6 @@ const ControlledInput: FC<Props> = ({register, selectValue, onUpdate}) => {
   //       console.log(data);
         
   //       const { USDRUB, USDCNY } = data?.quotes;
-        
-        
   //       if (selectValue === 'USD') {
   //         onUpdate(USDRUB)
   //       } else if (selectValue === 'CYN') {

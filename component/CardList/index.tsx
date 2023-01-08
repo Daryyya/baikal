@@ -1,12 +1,19 @@
-import React from "react";
+import React, { FC } from "react";
 import { data } from "./data";
 import Card from "../Card";
 import { Wrapper } from "./style";
 
-const CardList = () => {
+interface Props {
+  searchValue: string;
+}
+
+const CardList: FC<Props> = ({ searchValue }) => {
+  const newArr = data.filter((el) =>
+    el.name.toLowerCase().includes(searchValue.trim().toLowerCase())
+  );
   return (
     <Wrapper>
-      {data.map((item ) => (
+      {newArr.map((item) => (
         <Card key={item.id} item={item} />
       ))}
     </Wrapper>
