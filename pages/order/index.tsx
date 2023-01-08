@@ -1,9 +1,14 @@
-import React from 'react'
+import { observer } from 'mobx-react';
+import React from 'react';
+import { myFormData } from '../../store/formData';
 
-const Order = () => {
+const Order = observer(() => {
+  const state = myFormData.getState();
   return (
-    <div>Order</div>
+    <div>
+      {JSON.stringify(state, null, 2)}
+    </div>
   )
-}
+});
 
 export default Order

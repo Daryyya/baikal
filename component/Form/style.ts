@@ -1,19 +1,37 @@
 import styled from "@emotion/styled";
-import BaseInput from "../../kit/Input";
 import BaseButton from "../../kit/Button";
+import Tooltip from "./Tooltip";
 
 export const StyledForm = styled.form`
+  position: relative;
   display: flex;
   align-items: flex-end;
-`;
-
-export const Input = styled(BaseInput)`
-  padding: 15px 30px;
-  height: 65px;
-  font-weight: 600;
+  width: fit-content;
 `;
 
 export const Button = styled(BaseButton)`
   height: 67px;
   margin-left: 12px;
 `;
+
+export const StyledTooltipOne = styled(Tooltip)`
+  top: 110px;
+`;
+
+export const StyledSvgOne = styled.svg`
+  position: relative;
+  top: 3px;
+  margin-left: 13px;
+`;
+
+export const StyledTooltipTwo = styled(Tooltip)`
+  right: 0;
+  top: -50px;
+`;
+
+export const StyledSvgTwo = styled(StyledSvgOne)`
+  transform: rotate(180deg);
+  top: 5px;
+`;
+
+

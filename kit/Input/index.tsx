@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, LabelHTMLAttributes } from 'react'
+import React, { FC, forwardRef, InputHTMLAttributes, LabelHTMLAttributes } from 'react'
 import { StyledInput, Label } from "./style";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
@@ -6,14 +6,14 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   wrapperProps?:  LabelHTMLAttributes<HTMLLabelElement>;
 }
 
-const Input: FC<Props> = ({wrapperProps, topTitle, ...restProps}) => {
+const Input: FC<Props> = forwardRef<HTMLInputElement, Props>(({wrapperProps, topTitle, ...restProps}, ref) => {
   return (
     <Label {...wrapperProps}>
       {topTitle}
-      <StyledInput {...restProps}/>
+      <StyledInput {...restProps} ref={ref}/>
     </Label>
     
   )
-}
+})
 
 export default Input
