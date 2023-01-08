@@ -8,10 +8,10 @@ const Order = observer(() => {
   const state = myFormData.getState();
   return (
     <Container>
-      <div>{JSON.stringify(state, null, 2)}</div>
       <LeftColumn>
         <Title>Выберите мебель, которую нужно перевезти</Title>
-        <SerchForm></SerchForm>
+        <SerchForm/>
+        <div>{JSON.stringify(state, null, 2)}</div>
       </LeftColumn>
       <RightColumn>
         <Title>Затем заполните следующие поля выбранного элемента:</Title>

@@ -83,8 +83,8 @@ const Form = observer(() => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5" />
-            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5" />
+            <path d="M6 2V22" stroke="#5DAAFF" strokeWidth="1.5" />
+            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" strokeWidth="1.5" />
           </StyledSvgOne>
         </StyledTooltipOne>
       )}
@@ -98,8 +98,8 @@ const Form = observer(() => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5" />
-            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5" />
+            <path d="M6 2V22" stroke="#5DAAFF" strokeWidth="1.5" />
+            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" strokeWidth="1.5" />
           </StyledSvgTwo>
         </StyledTooltipTwo>
       )}
