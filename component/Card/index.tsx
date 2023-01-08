@@ -9,19 +9,23 @@ interface Props {
 
 const Card: FC<Props> = observer(({ item }) => {
   const { id, name, image } = item;
-
-  const isChecked = myOrderFormData.getState().some((item) => item.id === id);
+  const checkedItem = myOrderFormData.getCheckedItem();
+  const isChecked = id === checkedItem?.id ||
+    myOrderFormData.getState().some((picked) => picked.id === id);
 
   const handleClick = () => {
-    if (isChecked) {
-      myOrderFormData.removeItem(item);
+    if (checkedItem?.id === id) {
+      myOrderFormData.setCheckedItem(undefined);
     } else {
-      myOrderFormData.addItem(item);
+      console.log(item);
+      myOrderFormData.setCheckedItem(item);
     }
   };
+
   return (
     <Container>
       <StyledImage src={image} alt="item" width={120} height={97} />
+      {id}
       <ItemName>{name}</ItemName>
       <StyledButton
         variant={isChecked? 'white' : 'blue'}

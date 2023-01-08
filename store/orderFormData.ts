@@ -5,7 +5,7 @@ export interface Item {
   id: number;
   name: string;
   image: StaticImageData;
-  amount?: number;
+  amount?: string;
   volume?: number;
   netWeight?: number;
   grossWeight?: number;
@@ -13,7 +13,8 @@ export interface Item {
 }
 
 class OrderFormData {
-  private order: Item[] = []
+  private order: Item[] = [];
+  private checkedItem: Item | undefined = undefined;
 
   constructor() {
     makeAutoObservable(this)
@@ -33,6 +34,14 @@ class OrderFormData {
 
   public getState() {
     return this.order;
+  }
+
+  public setCheckedItem(item?: Item) {
+    this.checkedItem = item
+  }
+
+  public getCheckedItem() {
+    return this.checkedItem;
   }
 }
 

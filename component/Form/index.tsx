@@ -10,7 +10,6 @@ import { myDirectionFormData } from "../../store/directionFormData";
 import { observer } from "mobx-react";
 
 const Form = observer(() => {
-
   const router = useRouter();
 
   const { register, handleSubmit, control, setValue, formState } =
