@@ -14,10 +14,9 @@ interface Fields {
 }
 
 const Form = () => {
-
   const router = useRouter()
 
-  const {register, handleSubmit, control, setValue} = useForm<Fields>({
+  const {register, handleSubmit, control, setValue, formState} = useForm<Fields>({
     defaultValues: {
       from: '',
       to: 'Москва',
@@ -31,6 +30,8 @@ const Form = () => {
     // console.log(data)
     // router.push('/order')
   }
+
+  console.log(formState.errors);
 
   
   return (

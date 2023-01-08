@@ -12,6 +12,9 @@ const ControlledSelect: FC<Props> = ({control, ...selectProps}) => {
     <Controller
       control={control}
       name={selectProps.name}
+      rules={{
+        required: true,
+      }}
       render={({
         field: { onChange, onBlur, value, name },
       }) => (
