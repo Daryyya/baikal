@@ -5,15 +5,12 @@ import ControlledSelect from "./ControlledSelect";
 import { currencies } from "./currencies";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
+import { Fields } from "../../store/formData";
+import { myFormData } from "../../store/formData";
+import { observer } from "mobx-react";
 
-interface Fields {
-  from: string;
-  to: string;
-  currency: string;
-  rate: number;
-}
+const Form = observer(() => {
 
-const Form = () => {
   const router = useRouter();
 
   const { register, handleSubmit, control, setValue, formState } =
@@ -27,11 +24,11 @@ const Form = () => {
     });
   const { currency } = useWatch({ control });
 
-  const { isValid, isDirty, errors } = formState;
+  const { isDirty, errors } = formState;
 
   const onSubmit: SubmitHandler<Fields> = (data) => {
-    console.log(data, formState);
-    // router.push('/order')
+    myFormData.setState(data);
+    router.push('/order');
   };
 
   return (
@@ -108,6 +105,6 @@ const Form = () => {
       )}
     </StyledForm>
   );
-};
+});
 
 export default Form;
