@@ -25,7 +25,6 @@ const Card: FC<Props> = observer(({ item }) => {
   return (
     <Container>
       <StyledImage src={image} alt="item" width={120} height={97} />
-      {id}
       <ItemName>{name}</ItemName>
       <StyledButton
         variant={isChecked? 'white' : 'blue'}

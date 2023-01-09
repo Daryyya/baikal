@@ -5,9 +5,11 @@ import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
 import ControlledSelect from "./ControlledSelect";
 import { currencies } from "./currencies";
+import { chineseCities } from "./chineseCities";
 import { Fields } from "../../store/directionFormData";
 import { myDirectionFormData } from "../../store/directionFormData";
 import { observer } from "mobx-react";
+import { russianCities } from "./russianCities";
 
 const Form = observer(() => {
   const router = useRouter();
@@ -35,14 +37,14 @@ const Form = observer(() => {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <ControlledSelect
         control={control}
-        options={currencies}
+        options={chineseCities}
         hasArrow={false}
         topTitle="Откуда"
         name="from"
       />
       <ControlledSelect
         control={control}
-        options={currencies}
+        options={russianCities}
         topTitle="Куда"
         name="to"
       />
