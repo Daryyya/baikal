@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchForm from "../../component/SearchForm";
-import { Container, RightColumn, LeftColumn, Title } from "./style";
+import { Container, RightColumn, LeftColumn, Title } from "../../styles/order";
 import CardList from "../../component/CardList";
 import OrderForm from "../../component/OrderForm";
 
