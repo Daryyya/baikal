@@ -2,7 +2,7 @@
 
 # Website: 
  
- [Next-game](https://https://baikal.vercel.app/)
+ [BAIKAL](https://https://baikal.vercel.app/)
 
 ## Getting Started
 
