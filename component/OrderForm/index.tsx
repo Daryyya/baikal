@@ -32,11 +32,10 @@ const OrderForm: FC<Props> = observer(({}) => {
   });
 
   useEffect(reset, [checkedItem]);
-
   const { amount } = useWatch({ control });
 
   const onSubmit: SubmitHandler<Item> = (data) => {
-    myOrderFormData.addItem(data);
+    myOrderFormData.addItem({...checkedItem, ...data});
     myOrderFormData.setCheckedItem(undefined);
   };
 
