@@ -2,7 +2,7 @@
 
 # Website: 
  
- [BAIKAL](https://https://baikal.vercel.app/)
+ [BAIKAL](//https://baikal.vercel.app/)
 
 ## Getting Started
 
