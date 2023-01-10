@@ -24,5 +24,7 @@ export const StyledInput = styled.input`
 
   @media (max-width: 1200px) {
     max-width: 162px;
+    padding: 14px 17px;
+    height: 58px;
   }
 `;

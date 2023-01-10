@@ -8,19 +8,39 @@ export const StyledForm = styled.form`
   flex-wrap: wrap;
   align-items: flex-end;
   width: fit-content;
+  @media (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
+  }
 `;
 
 export const StyledButton = styled(Button)`
   height: 67px;
   margin-left: 12px;
   @media (max-width: 1200px) {
+    grid-column: 1 / 3;
     display: block;
     margin: 24px auto 0;
-    padding: 19px 94px;
+    padding: 19px 30px;
     font-size: 17px;
     line-height: 1;
+    width: 100%;
   }
 `;
+
+export const DesktopButtonContent = styled.span`
+  @media (max-width: 1200.2px) {
+    display: none;
+  }
+`;
+
+export const MobileButtonContent = styled.span`
+  @media (min-width: 1200.1px) {
+    display: none;
+  }
+`;
+
 
 export const StyledTooltipOne = styled(Tooltip)`
   top: 110px;
