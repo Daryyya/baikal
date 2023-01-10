@@ -21,7 +21,7 @@ export const StyledButton = styled(Button)`
   @media (max-width: 1200px) {
     grid-column: 1 / 3;
     display: block;
-    margin: 24px auto 0;
+    margin: 4px auto 0;
     padding: 19px 30px;
     font-size: 17px;
     line-height: 1;
@@ -44,6 +44,10 @@ export const MobileButtonContent = styled.span`
 
 export const StyledTooltipOne = styled(Tooltip)`
   top: 110px;
+
+  @media (max-width: 1200.2px) {
+    display: none;
+  }
 `;
 
 export const StyledSvgOne = styled.svg`
@@ -55,6 +59,10 @@ export const StyledSvgOne = styled.svg`
 export const StyledTooltipTwo = styled(Tooltip)`
   right: 0;
   top: -50px;
+
+  @media (max-width: 1200.2px) {
+    display: none;
+  }
 `;
 
 export const StyledSvgTwo = styled(StyledSvgOne)`

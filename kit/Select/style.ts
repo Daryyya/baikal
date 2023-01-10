@@ -61,8 +61,8 @@ export const StyledSelect = styled(Select)`
     padding: 0;
   }
   .react-select__option {
-    padding: 25px 30px;
-    min-width: 174px;
+    padding: 25px 10px 25px 20px;
+    min-width: 144px;
     border: 1px solid var(--ebeb-grey);
   }
   .react-select__option--is-selected {

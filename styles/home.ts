@@ -25,6 +25,9 @@ export const BackgroundImage = styled(Image)`
     object-fit: contain;
     object-position: right bottom;
     pointer-events: none;
+    @media (max-width: 768px) {
+        display: none
+    }
 `;
 
 export const Title = styled.h1`
