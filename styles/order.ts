@@ -9,13 +9,23 @@ export const Container = styled.div`
   grid-template-columns: 630fr 497fr;
   gap: 119px;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    min-height: calc(100vh - 64px);
+    display: block;
+    max-width: 375px;
+    padding: 0;
+  }
 `;
 
 export const RightColumn = styled.div`
-
+   @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const LeftColumn = styled.div`
+ 
 `;
 
 export const Title = styled.h2`

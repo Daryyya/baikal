@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   position: relative;
   max-width: 1440px;
   padding: 0 97px;
-
 `;
 
 export const Title = styled.h3`
@@ -37,6 +36,8 @@ export const StyledLink = styled(Link)`
 export const Style = styled.div`
 
   table {
+    margin: 0 auto;
+    width: 100%;
     background-color: var(--barely-grey);
     border-spacing: 0;
     border: 1px solid #E2E4EA;

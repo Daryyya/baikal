@@ -14,12 +14,21 @@ export const Label = styled.label`
   left: 5px;
   display: block;
   margin-bottom: 15px;
+
+  @media (max-width: 1200px) {
+    margin: 12px 0 20px;
+  }
 `;
 
 export const StyledSelect = styled(Select)`
   .react-select__control {
     padding: 14px 30px;
     min-width: 174px;
+
+    @media (max-width: 1200px) {
+      padding: 14px 15px;
+      min-width: 162px;
+    }
   }
   .react-select__control--menu-is-open, .react-select__control--is-focused {
     box-shadow: 0 0 1px var(--grey) inset;
@@ -29,6 +38,7 @@ export const StyledSelect = styled(Select)`
     padding-left: 0;
     min-height: 36px;
   }
+
   .react-select__single-value {
     font-family: 'Roboto', sans-serif;
     font-weight: 600 !important;
