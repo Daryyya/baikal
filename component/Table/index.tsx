@@ -12,6 +12,7 @@ const Table: FC<Props> = ({columns, data}) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    footerGroups,
     rows,
     prepareRow,
   } = useTable({
@@ -44,6 +45,15 @@ const Table: FC<Props> = ({columns, data}) => {
           )
         })}
       </tbody>
+      <tfoot>
+        {footerGroups.map(group => (
+          <tr {...group.getFooterGroupProps()}>
+            {group.headers.map(column => (
+              <td {...column.getFooterProps()}>{column.render('Footer')}</td>
+            ))}
+          </tr>
+        ))}
+      </tfoot>
     </table>
   )
 }
