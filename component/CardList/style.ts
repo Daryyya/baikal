@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   overflow-y: scroll;
 
   @media (max-width: 1200px) {
-    min-height: fit-content;
-    overflow-y: visible;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
   }
 `;

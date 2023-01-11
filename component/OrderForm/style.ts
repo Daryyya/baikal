@@ -88,3 +88,17 @@ margin-top: 25px;
 export const StyledButton = styled(Button)`
   padding: 19px 60px;
 `;
+
+export const CartLinkText = styled.div`
+  margin-top: 30px;
+  font-size: 17px;
+
+  & a {
+    position: relative;
+    top: 1px;
+    color: var(--blue);
+    font-size: 22px;
+    word-break: keep-all;
+    display: inline-block;
+  }
+`;

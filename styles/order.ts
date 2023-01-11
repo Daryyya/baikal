@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Link from "../kit/Link";
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -14,7 +15,7 @@ export const Container = styled.div`
     min-height: calc(100vh - 64px);
     display: block;
     max-width: 375px;
-    padding: 0;
+    padding: 0 0 85px;
   }
 `;
 
@@ -24,9 +25,7 @@ export const RightColumn = styled.div`
   }
 `;
 
-export const LeftColumn = styled.div`
- 
-`;
+export const LeftColumn = styled.div``;
 
 export const Title = styled.h2`
   letter-spacing: -1px;
@@ -35,6 +34,18 @@ export const Title = styled.h2`
   margin-bottom: 42px;
 
   @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+export const MobileCartLink = styled(Link)`
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 34px;
+
+  @media (min-width: 1200px) {
     display: none;
   }
 `;

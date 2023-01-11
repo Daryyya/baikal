@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { observer } from "mobx-react";
 import DesktopSearchForm from "../../component/DesktopSearchForm";
 import MobileSearchForm from "../../component/MobileSearchForm";
-import { Container, RightColumn, LeftColumn, Title } from "../../styles/order";
+import { Container, RightColumn, LeftColumn, Title, MobileCartLink } from "../../styles/order";
 import CardList from "../../component/CardList";
 import OrderForm from "../../component/OrderForm";
 import MobileOrderModal from "../../component/MobileOrderModal";
+import { myOrderFormData } from "../../store/orderFormData";
 
-const Order = () => {
+const Order = observer(({}) => {
+  const order = myOrderFormData.getState();
   const [searchValue, setSearchValue] = useState('');
+
   return (
     <Container>
       <LeftColumn>
@@ -21,8 +25,13 @@ const Order = () => {
         <OrderForm/>
       </RightColumn>
       <MobileOrderModal />
+      {!!order.length && (
+        <MobileCartLink variant="blue" page="/cart">
+          Корзина ({order.length})
+          </MobileCartLink>
+      )}
     </Container>
   );
-};
+});
 
 export default Order;

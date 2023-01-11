@@ -12,6 +12,7 @@ import {
   StyledText,
   Buttons,
   StyledButton,
+  CartLinkText,
 } from "./style";
 import { Item, myOrderFormData } from "../../store/orderFormData";
 import Input from "../../kit/Input";
@@ -44,10 +45,10 @@ const OrderForm: FC = observer(({}) => {
 
   if (!checkedItem) {
     return (
-      <div>
-        Выберите новый товар или перейдите в{" "}
+      <CartLinkText>
+        Выберите новый товар или перейдите в&nbsp;
         <Link href="/cart">корзину ({order.length})</Link>
-      </div>
+      </CartLinkText>
     );
   }
 
