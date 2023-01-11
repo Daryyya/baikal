@@ -1,18 +1,16 @@
-import React, {FC} from 'react'
-import Input from '../../kit/Input';
+import React, {FC} from 'react';
 import { StyledForm, StyledInput, StyledButton } from './style';
 import {useForm, SubmitHandler} from 'react-hook-form';
 
 interface Fields {
-  name: string,
+  name: string;
 }
 
 interface Props {
   setSearchValue: (newValue: string) => void;
 }
 
-const SerchForm: FC<Props> = ({setSearchValue}) => {
-
+const DesktopSerchForm: FC<Props> = ({setSearchValue}) => {
   const {handleSubmit, register} = useForm<Fields>()
 
   const onSubmit: SubmitHandler<Fields> = (data) => {
@@ -21,10 +19,10 @@ const SerchForm: FC<Props> = ({setSearchValue}) => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-    <StyledInput {...register('name')} placeholder='Введите название'/>
+      <StyledInput {...register('name')} placeholder='Введите название'/>
       <StyledButton variant='blue' type='submit'>Поиск</StyledButton>
     </StyledForm>
   )
 }
 
-export default SerchForm
+export default DesktopSerchForm

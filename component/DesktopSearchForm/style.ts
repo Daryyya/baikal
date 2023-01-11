@@ -4,7 +4,12 @@ import Input from "../../kit/Input";
 
 export const StyledForm = styled.form`
   display: flex;
-  margin-bottom: 58px;`
+  margin-bottom: 58px;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
 
 export const StyledInput = styled(Input)`
   min-width: 370px;

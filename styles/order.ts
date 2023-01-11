@@ -33,4 +33,8 @@ export const Title = styled.h2`
   color: var(--grey);
   font-size: 36px;
   margin-bottom: 42px;
-  `;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;

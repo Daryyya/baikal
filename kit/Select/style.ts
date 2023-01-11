@@ -30,6 +30,9 @@ export const StyledSelect = styled(Select)`
       padding: 14px 17px;
       min-width: 162px;
     }
+    @media (max-width: 375px) {
+      min-width: 138px;
+    }
   }
   .react-select__control--menu-is-open, .react-select__control--is-focused {
     box-shadow: 0 0 1px var(--grey) inset;
@@ -64,6 +67,10 @@ export const StyledSelect = styled(Select)`
     padding: 25px 10px 25px 20px;
     min-width: 144px;
     border: 1px solid var(--ebeb-grey);
+
+    @media (max-width: 375px) {
+      min-width: 130px;
+    }
   }
   .react-select__option--is-selected {
     background-color: var(--blue);

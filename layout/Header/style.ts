@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "../../kit/Link";
+import NextLink from 'next/link'
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -14,16 +15,23 @@ export const StyledHeader = styled.header`
     height: 64px;
     margin: 0 auto;
   }
-  @media (max-width: 375px) {
-    & img {
-      width: 130px;
-    }
+`;
+
+export const DesktopStyledLink = styled(Link)`
+  @media (max-width: 768px) {
+    display:none;
   }
 `;
 
-export const StyledLink = styled(Link)`
-  @media (max-width: 375px) {
-    padding: 12px 18px;
+export const BurgerMenu = styled(NextLink)`
+  padding: 4px;
+
+  &:hover {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (min-width: 768.1px) {
+    display:none;
   }
 `;
 

@@ -4,8 +4,14 @@ import Button from "../../kit/Button";
 import Input from "../../kit/Input";
 
 export const StyledForm = styled.form`
-display: grid;
-gap: 15px;
+  display: grid;
+  gap: 15px;
+
+  @media (max-width: 1200px) {
+    max-width: 375px;
+    padding: 30px 0;
+    margin: 0 auto;
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -18,6 +24,10 @@ export const ItemWrapper = styled.div`
 
 export const StyledImage = styled(Image)`
   height: 70px;
+  @media (max-width: 1200px) {
+    width: 140px;
+    height: 88px;
+  }
 `;
 
 export const ItemName = styled.p`
@@ -26,6 +36,9 @@ export const ItemName = styled.p`
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
+  @media (max-width: 1200px) {
+    margin: 0 25px;
+}
 `;
 
 export const ButtonWrapper = styled.div`
@@ -58,6 +71,12 @@ export const StyledText = styled.p`
   line-height: 1;
   color: var(--grey);
   margin-right: 35px;
+`;
+
+export const StyledInput = styled(Input)`
+  @media (max-width: 1200px) {
+    width: 100% !important;
+  }
 `;
 
 export const Buttons = styled.div`

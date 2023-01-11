@@ -6,4 +6,9 @@ export const Wrapper = styled.div`
   width: 100%;
   max-height: 350px;
   overflow-y: scroll;
+
+  @media (max-width: 1200px) {
+    min-height: fit-content;
+    overflow-y: visible;
+  }
 `;
