@@ -10,4 +10,12 @@ export const Input = styled(BaseInput)`
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+  @media (max-width: 1200px) {
+    max-width: 162px;
+    padding: 14px 17px;
+    height: 58px;
+  }
+  @media (max-width: 375px) {
+      min-width: 138px;
+  }
 `;

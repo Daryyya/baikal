@@ -21,13 +21,5 @@ export const StyledInput = styled.input`
   &:placeholder {
       color: var(--light-grey)
   }
-
-  @media (max-width: 1200px) {
-    max-width: 162px;
-    padding: 14px 17px;
-    height: 58px;
-  }
-  @media (max-width: 375px) {
-      min-width: 138px;
-    }
+ 
 `;

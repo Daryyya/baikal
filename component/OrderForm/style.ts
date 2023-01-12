@@ -4,18 +4,19 @@ import Button from "../../kit/Button";
 import Input from "../../kit/Input";
 
 export const StyledForm = styled.form`
+background-color: var(--semilight-blue);
   display: grid;
   gap: 15px;
 
   @media (max-width: 1200px) {
     max-width: 375px;
-    padding: 30px 0;
+    padding: 0 21px 30px;
     margin: 0 auto;
   }
 `;
 
 export const ItemWrapper = styled.div`
-  background-color: var(--barely-grey);
+  background-color: var(--semilight-blue);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +34,6 @@ export const StyledImage = styled(Image)`
 export const ItemName = styled.p`
   margin: 0 auto;
   font-size: 17px;
-  line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
   @media (max-width: 1200px) {
@@ -74,15 +74,18 @@ export const StyledText = styled.p`
 `;
 
 export const StyledInput = styled(Input)`
-  @media (max-width: 1200px) {
-    width: 100% !important;
-  }
+  
 `;
 
 export const Buttons = styled.div`
 margin-top: 25px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 10px;
+}
 `;
 
 export const StyledButton = styled(Button)`
