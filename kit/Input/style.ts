@@ -21,4 +21,5 @@ export const StyledInput = styled.input`
   &:placeholder {
       color: var(--light-grey)
   }
+ 
 `;

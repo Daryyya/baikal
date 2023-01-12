@@ -1,6 +1,15 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { StyledForm, StyledButton, StyledTooltipOne, StyledSvgOne, StyledTooltipTwo, StyledSvgTwo } from "./style";
+import {
+  StyledForm,
+  StyledButton,
+  StyledTooltipOne,
+  StyledSvgOne,
+  StyledTooltipTwo,
+  StyledSvgTwo,
+  DesktopButtonContent,
+  MobileButtonContent,
+} from "./style";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
 import ControlledSelect from "./ControlledSelect";
@@ -17,12 +26,12 @@ const Form = observer(() => {
   const { register, handleSubmit, control, setValue, formState } =
     useForm<Fields>({
       defaultValues: {
-        from: '',
+        from: "",
         to: "Москва",
         currency: "USD",
         rate: 0,
       },
-      mode: 'all'
+      mode: "all",
     });
   const { currency } = useWatch({ control });
 
@@ -30,7 +39,7 @@ const Form = observer(() => {
 
   const onSubmit: SubmitHandler<Fields> = (data) => {
     myDirectionFormData.setState(data);
-    router.push('/order');
+    router.push("/order");
   };
 
   return (
@@ -41,6 +50,7 @@ const Form = observer(() => {
         hasArrow={false}
         topTitle="Откуда"
         name="from"
+        firstChild
       />
       <ControlledSelect
         control={control}
@@ -53,6 +63,7 @@ const Form = observer(() => {
         options={currencies}
         topTitle="Валюта"
         name="currency"
+        lastChild
       />
       <ControlledInput
         register={register}
@@ -60,22 +71,25 @@ const Form = observer(() => {
         onUpdate={(rate) => setValue("rate", rate)}
       />
       <StyledButton variant="blue" type="submit">
-        Далее
-        <svg
-          width="27"
-          height="11"
-          viewBox="0 0 27 11"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10"
-            stroke="white"
-            strokeWidth="1.5"
-          />
-        </svg>
+        <DesktopButtonContent>
+          Далее &nbsp;
+          <svg
+            width="27"
+            height="11"
+            viewBox="0 0 27 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10"
+              stroke="white"
+              strokeWidth="1.5"
+            />
+          </svg>
+        </DesktopButtonContent>
+        <MobileButtonContent>Выбрать мебель</MobileButtonContent>
       </StyledButton>
-      { errors.from && (
+      {errors.from && (
         <StyledTooltipOne>
           Для начала заполните поля выше
           <StyledSvgOne

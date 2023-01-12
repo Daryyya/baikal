@@ -1,24 +1,37 @@
 import React, { useState } from "react";
-import SearchForm from "../../component/SearchForm";
-import { Container, RightColumn, LeftColumn, Title } from "../../styles/order";
+import { observer } from "mobx-react";
+import DesktopSearchForm from "../../component/DesktopSearchForm";
+import MobileSearchForm from "../../component/MobileSearchForm";
+import { Container, RightColumn, LeftColumn, Title, MobileCartLink } from "../../styles/order";
 import CardList from "../../component/CardList";
 import OrderForm from "../../component/OrderForm";
+import MobileOrderModal from "../../component/MobileOrderModal";
+import { myOrderFormData } from "../../store/orderFormData";
 
-const Order = () => {
+const Order = observer(({}) => {
+  const order = myOrderFormData.getState();
   const [searchValue, setSearchValue] = useState('');
+
   return (
     <Container>
       <LeftColumn>
         <Title>Выберите мебель, которую нужно перевезти</Title>
-        <SearchForm setSearchValue={setSearchValue}/>
+        <DesktopSearchForm setSearchValue={setSearchValue}/>
+        <MobileSearchForm setSearchValue={setSearchValue}/>
         <CardList searchValue={searchValue}/>
       </LeftColumn>
       <RightColumn>
         <Title>Затем заполните следующие поля выбранного элемента:</Title>
         <OrderForm/>
       </RightColumn>
+      <MobileOrderModal />
+      {!!order.length && (
+        <MobileCartLink variant="blue" page="/cart">
+          Корзина ({order.length})
+          </MobileCartLink>
+      )}
     </Container>
   );
-};
+});
 
 export default Order;

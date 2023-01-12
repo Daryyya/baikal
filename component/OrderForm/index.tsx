@@ -12,15 +12,15 @@ import {
   StyledText,
   Buttons,
   StyledButton,
+  CartLinkText,
 } from "./style";
 import { Item, myOrderFormData } from "../../store/orderFormData";
 import Input from "../../kit/Input";
 import Link from "next/link";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 
-interface Props {}
-
-const OrderForm: FC<Props> = observer(({}) => {
+//todo: изменить стили мобильные
+const OrderForm: FC = observer(({}) => {
   const order = myOrderFormData.getState();
   const checkedItem = myOrderFormData.getCheckedItem();
 
@@ -45,10 +45,10 @@ const OrderForm: FC<Props> = observer(({}) => {
 
   if (!checkedItem) {
     return (
-      <div>
-        Выберите новый товар или перейдите в{" "}
+      <CartLinkText>
+        Выберите новый товар или перейдите в&nbsp;
         <Link href="/cart">корзину ({order.length})</Link>
-      </div>
+      </CartLinkText>
     );
   }
 

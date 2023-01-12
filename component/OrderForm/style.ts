@@ -4,12 +4,19 @@ import Button from "../../kit/Button";
 import Input from "../../kit/Input";
 
 export const StyledForm = styled.form`
-display: grid;
-gap: 15px;
+background-color: var(--semilight-blue);
+  display: grid;
+  gap: 15px;
+
+  @media (max-width: 1200px) {
+    max-width: 375px;
+    padding: 0 21px 30px;
+    margin: 0 auto;
+  }
 `;
 
 export const ItemWrapper = styled.div`
-  background-color: var(--barely-grey);
+  background-color: var(--semilight-blue);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,14 +25,20 @@ export const ItemWrapper = styled.div`
 
 export const StyledImage = styled(Image)`
   height: 70px;
+  @media (max-width: 1200px) {
+    width: 140px;
+    height: 88px;
+  }
 `;
 
 export const ItemName = styled.p`
   margin: 0 auto;
   font-size: 17px;
-  line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
+  @media (max-width: 1200px) {
+    margin: 0 25px;
+}
 `;
 
 export const ButtonWrapper = styled.div`
@@ -60,12 +73,35 @@ export const StyledText = styled.p`
   margin-right: 35px;
 `;
 
+export const StyledInput = styled(Input)`
+  
+`;
+
 export const Buttons = styled.div`
 margin-top: 25px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 10px;
+}
 `;
 
 export const StyledButton = styled(Button)`
   padding: 19px 60px;
+`;
+
+export const CartLinkText = styled.div`
+  margin-top: 30px;
+  font-size: 17px;
+
+  & a {
+    position: relative;
+    top: 1px;
+    color: var(--blue);
+    font-size: 22px;
+    word-break: keep-all;
+    display: inline-block;
+  }
 `;

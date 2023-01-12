@@ -31,7 +31,12 @@ const ControlledInput: FC<Props> = ({register, selectValue, onUpdate}) => {
   // }, [selectValue])
 
   return (
-    <Input topTitle="Курс" {...register('rate', {required: true})}/>
+    <Input
+      topTitle="Курс"
+      disabled
+      title="Выберите валюту и курс выберется автоматически"
+      {...register('rate', {required: true})}
+      />
   )
 }
 
