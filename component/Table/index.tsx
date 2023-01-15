@@ -1,8 +1,17 @@
 import { observer } from "mobx-react";
-import Image from "next/image";
 import React from "react";
 import { myOrderFormData } from "../../store/orderFormData";
-import { StyledTable, StyledThead, StyledHead, HeadTitle, StyledCell, StyledRow, StyledCellContent } from "./style";
+import {
+  EmptyWarning,
+  StyledTable,
+  StyledThead,
+  StyledHead,
+  HeadTitle,
+  StyledCell,
+  StyledRow,
+  StyledCellContent,
+  StyledImage,
+} from "./style";
 
 const titles = [
   " ",
@@ -17,22 +26,26 @@ const titles = [
 const Table = observer(() => {
   const order = myOrderFormData.getState();
 
+  if (order.length === 0) {
+    return (
+      <EmptyWarning>Корзина пуста</EmptyWarning>
+    )
+  }
+
   return (
     <StyledTable>
       <StyledThead>
         <tr>
           {titles.map((title) => (
             <StyledHead key={title}>
-              <HeadTitle>
-              {title}
-              </HeadTitle>
+              <HeadTitle>{title}</HeadTitle>
             </StyledHead>
           ))}
         </tr>
       </StyledThead>
       <tbody>
-        {order.map(
-          ({
+        {order.map((item) => {
+          const {
             id,
             name,
             image,
@@ -41,47 +54,67 @@ const Table = observer(() => {
             netWeight,
             grossWeight,
             cost,
-          }) => (
+          } = item;
+          return (
             <StyledRow key={id}>
               <StyledCell>
                 <StyledCellContent>
-                  <Image src={image} alt="изображение" width={120} height={97} />{" "}
+                  <StyledImage
+                    src={image}
+                    alt="изображение"
+                    width={120}
+                    height={97}
+                  />{" "}
                   {name}
                 </StyledCellContent>
               </StyledCell>
               <StyledCell>
-                <StyledCellContent>
-                  {amount}
-                </StyledCellContent>
+                <StyledCellContent>{amount}</StyledCellContent>
+              </StyledCell>
+              <StyledCell>
+                <StyledCellContent>{netWeight}</StyledCellContent>
+              </StyledCell>
+              <StyledCell>
+                <StyledCellContent>{grossWeight}</StyledCellContent>
+              </StyledCell>
+              <StyledCell>
+                <StyledCellContent>{volume}</StyledCellContent>
+              </StyledCell>
+              <StyledCell>
+                <StyledCellContent>{cost}</StyledCellContent>
               </StyledCell>
               <StyledCell>
                 <StyledCellContent>
-                  {netWeight}
-                </StyledCellContent>
-              </StyledCell>
-              <StyledCell>
-                <StyledCellContent>
-                  {grossWeight}
-                </StyledCellContent>
-              </StyledCell>
-              <StyledCell>
-                <StyledCellContent>
-                  {volume}
-                </StyledCellContent>
-              </StyledCell>
-              <StyledCell>
-                <StyledCellContent>
-                {cost}
-                  </StyledCellContent>
-                </StyledCell>
-              <StyledCell>
-                <StyledCellContent>
-                <button>x</button>
+                  <button
+                    type="button"
+                    onClick={() => myOrderFormData.removeItem(item)}
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="red"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 4L15.5385 16"
+                        stroke="red"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                      <path
+                        d="M16 4L4.46154 16"
+                        stroke="red"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </button>
                 </StyledCellContent>
               </StyledCell>
             </StyledRow>
-          )
-        )}
+          );
+        })}
       </tbody>
     </StyledTable>
   );

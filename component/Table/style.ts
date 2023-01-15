@@ -1,4 +1,11 @@
 import styled from "@emotion/styled";
+import Image from "next/image";
+
+export const EmptyWarning = styled.div`
+  margin: 10vh auto;
+  text-align: center;
+  font-size: 30px;
+`;
 
 export const StyledTable = styled.table`
   margin-top: 45px;
@@ -71,7 +78,7 @@ export const StyledCell = styled.td`
     display: grid;
     justify-content: left;
     gap: 15px;
-    grid-auto-flow: column;
+    grid-template-columns: 120px 1fr;
   }
   &:not(:first-of-type) div {
     border-left: none;
@@ -90,4 +97,10 @@ export const StyledCellContent = styled.div`
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
+`;
+
+export const StyledImage = styled(Image)`
+  height: 95px;
+  width: 120px;
+  object-fit: cover;
 `;

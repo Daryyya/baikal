@@ -19,7 +19,6 @@ export const ItemWrapper = styled.div`
   background-color: var(--semilight-blue);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-radius: 3px;
 `;
 
@@ -32,7 +31,7 @@ export const StyledImage = styled(Image)`
 `;
 
 export const ItemName = styled.p`
-  margin: 0 auto;
+  margin-left: 15px;
   font-size: 17px;
   letter-spacing: -1px;
   color: var(--grey);

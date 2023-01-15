@@ -17,7 +17,6 @@ const Card: FC<Props> = observer(({ item }) => {
     if (checkedItem?.id === id) {
       myOrderFormData.setCheckedItem(undefined);
     } else {
-      console.log(item);
       myOrderFormData.setCheckedItem(item);
     }
   };
