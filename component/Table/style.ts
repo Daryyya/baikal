@@ -1,16 +1,13 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 
-export const EmptyWarning = styled.div`
-  margin: 10vh auto;
-  text-align: center;
-  font-size: 30px;
-`;
-
 export const StyledTable = styled.table`
   margin-top: 45px;
   border-collapse: collapse;
   width: 100%;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const StyledThead = styled.thead``;
