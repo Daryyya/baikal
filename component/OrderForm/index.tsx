@@ -24,13 +24,13 @@ const OrderForm: FC = observer(({}) => {
   const order = myOrderFormData.getState();
   const checkedItem = myOrderFormData.getCheckedItem();
 
-  const { handleSubmit, reset, register, setValue, control } = useForm<Item>({
+  const { handleSubmit, reset, register, setValue, control, formState } = useForm<Item>({
     defaultValues: {
       ...checkedItem,
       amount: "1",
     },
   });
-
+  
   useEffect(reset, [checkedItem]);
   const { amount } = useWatch({ control });
 
@@ -65,6 +65,7 @@ const OrderForm: FC = observer(({}) => {
           <button
             onClick={() => setValue("amount", `${Number(amount) - 1}`)}
             type="button"
+            disabled={amount === '1'}
           >
             <StyledMinus
               width="15"
@@ -76,7 +77,7 @@ const OrderForm: FC = observer(({}) => {
               <path d="M0 1L15 1" stroke="#5DAAFF" />
             </StyledMinus>
           </button>
-          <AmountInput defaultValue="1" {...register("amount")} />
+          <AmountInput defaultValue="1" {...register("amount", { required: true, min: 1 })} />
           <button
             onClick={() => setValue("amount", `${Number(amount) + 1}`)}
             type="button"
@@ -94,18 +95,18 @@ const OrderForm: FC = observer(({}) => {
           </button>
         </ButtonWrapper>
       </AmountWrapper>
-      <Input placeholder="Объём, м3" {...register("volume")} />
-      <Input placeholder="Общая масса нетто, кг" {...register("netWeight")} />
+      <Input placeholder="Объём, м3" {...register("volume", { required: true })} />
+      <Input placeholder="Общая масса нетто, кг" {...register("netWeight", { required: true })} />
       <Input
         placeholder="Общая масса брутто, кг"
         {...register("grossWeight")}
       />
-      <Input placeholder="Стоимость одной единицы" {...register("cost")} />
+      <Input placeholder="Стоимость одной единицы" {...register("cost", { required: true })} />
       <Buttons>
         <StyledButton type="reset" variant="blue" onClick={() => reset()}>
           Сбросить
         </StyledButton>
-        <StyledButton type="submit" variant="blue">
+        <StyledButton type="submit" variant="blue" disabled={!formState.isValid}>
           Добавить
         </StyledButton>
       </Buttons>
