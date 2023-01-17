@@ -17,7 +17,6 @@ const Card: FC<Props> = observer(({ item }) => {
 
   const handleEditClick = () => {
     myOrderFormData.setCheckedItem(item);
-    myOrderFormData.removeItem(item)
     router.push('/order');
   }
   return (

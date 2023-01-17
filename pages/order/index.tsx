@@ -10,6 +10,7 @@ import { myOrderFormData } from "../../store/orderFormData";
 
 const Order = observer(({}) => {
   const order = myOrderFormData.getState();
+  const checkedItem = myOrderFormData.getCheckedItem();
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -25,10 +26,10 @@ const Order = observer(({}) => {
         <OrderForm/>
       </RightColumn>
       <MobileOrderModal />
-      {!!order.length && (
+      {!!order.length && !checkedItem?.key && (
         <MobileCartLink variant="blue" page="/cart">
           Корзина ({order.length})
-          </MobileCartLink>
+        </MobileCartLink>
       )}
     </Container>
   );

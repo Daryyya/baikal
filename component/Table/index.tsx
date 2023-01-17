@@ -46,9 +46,10 @@ const Table = observer(() => {
             netWeight,
             grossWeight,
             cost,
+            key,
           } = item;
           return (
-            <StyledRow key={id}>
+            <StyledRow key={key || id}>
               <StyledCell>
                 <StyledCellContent>
                   <StyledImage

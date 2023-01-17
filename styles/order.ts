@@ -29,7 +29,6 @@ export const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* justify-content: space-between; */
 `;
 
 export const Title = styled.h2`
@@ -53,6 +52,7 @@ export const MobileCartLink = styled(Link)`
   left: 50%;
   transform: translateX(-50%);
   padding: 16px 34px;
+  z-index: 2;
 
   @media (min-width: 1200px) {
     display: none;

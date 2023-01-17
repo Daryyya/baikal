@@ -20,7 +20,7 @@ import { myDirectionFormData } from "../../store/directionFormData";
 import { observer } from "mobx-react";
 import { russianCities } from "./russianCities";
 
-const Form = observer(() => {
+const HomeForm = observer(() => {
   const router = useRouter();
 
   const { register, handleSubmit, control, setValue, formState } =
@@ -123,4 +123,4 @@ const Form = observer(() => {
   );
 });
 
-export default Form;
+export default HomeForm;
