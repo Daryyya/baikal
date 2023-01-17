@@ -18,7 +18,7 @@ const Cart = observer(() => {
   const order = myOrderFormData.getState();
   return (
     <Wrapper>
-      {!!order.length && <Title>Добавленная мебель({order.length})</Title>}
+      {!!order.length && <Title>Добавленная мебель ({order.length})</Title>}
       {order.length ? (
         <>
           <Table />
