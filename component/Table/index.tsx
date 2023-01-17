@@ -2,7 +2,6 @@ import { observer } from "mobx-react";
 import React from "react";
 import { myOrderFormData } from "../../store/orderFormData";
 import {
-  EmptyWarning,
   StyledTable,
   StyledThead,
   StyledHead,
@@ -25,13 +24,6 @@ const titles = [
 
 const Table = observer(() => {
   const order = myOrderFormData.getState();
-
-  if (order.length === 0) {
-    return (
-      <EmptyWarning>Корзина пуста</EmptyWarning>
-    )
-  }
-
   return (
     <StyledTable>
       <StyledThead>
@@ -54,9 +46,10 @@ const Table = observer(() => {
             netWeight,
             grossWeight,
             cost,
+            key,
           } = item;
           return (
-            <StyledRow key={id}>
+            <StyledRow key={key || id}>
               <StyledCell>
                 <StyledCellContent>
                   <StyledImage

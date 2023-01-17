@@ -14,11 +14,15 @@ export const Form = styled.form`
     left: 50%;
     transform: translateX(-50%);
     width: 375px;
+    padding: 0 20px;
   }
   @media (max-width: 768px) {
     left: 20px;
     transform: none;
     width: calc(100% - 88px);
+  }
+  @media (max-width: 375px) {
+    padding: 0;
   }
 
   & label {
@@ -47,5 +51,8 @@ export const StyledInput = styled(Input)`
   @media (max-width: 1200px) {
     padding: 7px 2px ;
     height: auto;
+  }
+  @media (max-width: 375px) {
+    min-width: 180px;
   }
 `;

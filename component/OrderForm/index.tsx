@@ -19,7 +19,6 @@ import Input from "../../kit/Input";
 import Link from "next/link";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 
-//todo: изменить стили мобильные
 const OrderForm: FC = observer(({}) => {
   const order = myOrderFormData.getState();
   const checkedItem = myOrderFormData.getCheckedItem();
@@ -35,7 +34,11 @@ const OrderForm: FC = observer(({}) => {
   const { amount } = useWatch({ control });
 
   const onSubmit: SubmitHandler<Item> = (data) => {
-    myOrderFormData.addItem({...checkedItem, ...data});
+    if (checkedItem?.key) {
+      myOrderFormData.editItem({...checkedItem, ...data}, checkedItem.key);
+    } else {
+      myOrderFormData.addItem({...checkedItem, ...data}, Date.now());
+    }
     myOrderFormData.setCheckedItem(undefined);
   };
 
@@ -107,7 +110,7 @@ const OrderForm: FC = observer(({}) => {
           Сбросить
         </StyledButton>
         <StyledButton type="submit" variant="blue" disabled={!formState.isValid}>
-          Добавить
+          {checkedItem.key ? 'Изменить' : 'Добавить'}
         </StyledButton>
       </Buttons>
     </StyledForm>

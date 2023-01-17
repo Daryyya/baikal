@@ -10,6 +10,7 @@ export interface Item {
   netWeight?: number;
   grossWeight?: number;
   cost?: number;
+  key?: number;
 }
 
 class OrderFormData {
@@ -20,16 +21,17 @@ class OrderFormData {
     makeAutoObservable(this)
   }
 
-  public addItem(item: Item) {
-    this.order = [...this.order, item]
+  public addItem(item: Item, key: number) {
+    this.order = [...this.order, {...item, key}]
   }
 
   public removeItem(item: Item) {
-    this.order = this.order.filter(el => el.id !== item.id)
+    this.order = this.order.filter(el => el.key !== item.key)
   }
 
-  public setState(state: Item[]) {
-    this.order = state
+  public editItem(item: Item, key: number) {
+    this.removeItem(item);
+    this.addItem(item, key);
   }
 
   public getState() {

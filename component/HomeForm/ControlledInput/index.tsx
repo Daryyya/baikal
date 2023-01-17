@@ -29,7 +29,7 @@ const ControlledInput: FC<Props> = ({register, selectValue, onUpdate}) => {
       })
       .catch(console.log)
   }, [selectValue])
-
+  
   return (
     <Input
       topTitle="Курс"
