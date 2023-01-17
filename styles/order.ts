@@ -4,7 +4,7 @@ import Link from "../kit/Link";
 export const Container = styled.div`
   max-width: 1440px;
   min-height: calc(100vh - var(--header-height));
-  padding: 0 97px;
+  padding: 0 97px 85px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 630fr 497fr;
@@ -15,7 +15,7 @@ export const Container = styled.div`
     min-height: calc(100vh - 64px);
     display: block;
     max-width: 375px;
-    padding: 0 0 85px;
+    padding: 0 0 45px;
   }
 `;
 
@@ -25,13 +25,22 @@ export const RightColumn = styled.div`
   }
 `;
 
-export const LeftColumn = styled.div``;
+export const LeftColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* justify-content: space-between; */
+`;
 
 export const Title = styled.h2`
   letter-spacing: -1px;
   color: var(--grey);
   font-size: 36px;
   margin-bottom: 42px;
+
+  @media (max-width: 1440px) {
+    font-size: 30px;
+  }
 
   @media (max-width: 1200px) {
     display: none;

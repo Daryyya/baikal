@@ -19,7 +19,6 @@ import Input from "../../kit/Input";
 import Link from "next/link";
 import { useForm, SubmitHandler, useWatch } from "react-hook-form";
 
-//todo: изменить стили мобильные
 const OrderForm: FC = observer(({}) => {
   const order = myOrderFormData.getState();
   const checkedItem = myOrderFormData.getCheckedItem();

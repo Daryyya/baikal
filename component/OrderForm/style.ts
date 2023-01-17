@@ -16,7 +16,7 @@ background-color: var(--semilight-blue);
 `;
 
 export const ItemWrapper = styled.div`
-  background-color: var(--semilight-blue);
+  background-color: #F8FAFF;
   display: flex;
   align-items: center;
   border-radius: 3px;
@@ -77,13 +77,13 @@ export const StyledInput = styled(Input)`
 `;
 
 export const Buttons = styled.div`
-margin-top: 25px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  margin-top: 25px;
 
   @media (max-width: 1200px) {
-    flex-direction: column;
-    gap: 10px;
+    grid-template-columns: 1fr;
 }
 `;
 

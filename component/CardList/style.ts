@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   display: grid;
   gap: 4px;
   width: 100%;
-  max-height: 350px;
+  max-height: 403px;
   overflow-y: scroll;
 
   @media (max-width: 1200px) {
