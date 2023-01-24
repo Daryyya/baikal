@@ -1,6 +1,6 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import Select from "../../../kit/Select";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import Select from '../../../kit/Select';
 
 interface Props {
   firstChild?: boolean;
@@ -23,7 +23,7 @@ export const StyledSelect = styled(Select)<Props>`
       position: relative;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         width: 1px;

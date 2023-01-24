@@ -1,18 +1,11 @@
-import { observer } from "mobx-react";
-import React from "react";
-import Image from "next/image";
-import OrderList from "../../component/OrderList";
-import Table from "../../component/Table";
-import { myOrderFormData } from "../../store/orderFormData";
-import {
-  Wrapper,
-  ButtonsWrapper,
-  StyledButton,
-  StyledLink,
-  Title,
-  EmptyWarning,
-} from "../../styles/cart";
-import sofa from "../../public/img/sofa.png";
+import { observer } from 'mobx-react';
+import React from 'react';
+import Image from 'next/image';
+import OrderList from '../../component/OrderList';
+import Table from '../../component/Table';
+import { myOrderFormData } from '../../store/orderFormData';
+import { Wrapper, ButtonsWrapper, StyledButton, StyledLink, Title, EmptyWarning } from '../../styles/cart';
+import sofa from '../../public/img/sofa.png';
 
 const Cart = observer(() => {
   const order = myOrderFormData.getState();

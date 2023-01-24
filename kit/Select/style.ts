@@ -1,8 +1,8 @@
-import Select from "react-select";
-import styled from "@emotion/styled";
+import Select from 'react-select';
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 15px;
   line-height: 1;
@@ -34,7 +34,8 @@ export const StyledSelect = styled(Select)`
       min-width: 138px;
     }
   }
-  .react-select__control--menu-is-open, .react-select__control--is-focused {
+  .react-select__control--menu-is-open,
+  .react-select__control--is-focused {
     box-shadow: 0 0 1px var(--grey) inset;
     border-color: transparent;
   }
@@ -75,4 +76,4 @@ export const StyledSelect = styled(Select)`
   .react-select__option--is-selected {
     background-color: var(--blue);
   }
-`
+`;

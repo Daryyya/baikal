@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import Link from "../kit/Link";
+import styled from '@emotion/styled';
+import Link from '../kit/Link';
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -20,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const RightColumn = styled.div`
-   @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;

@@ -1,8 +1,8 @@
-import { observer } from "mobx-react";
-import React from "react";
-import { myOrderFormData } from "../../store/orderFormData";
-import Card from "./Card";
-import {Wrapper} from './style'
+import { observer } from 'mobx-react';
+import React from 'react';
+import { myOrderFormData } from '../../store/orderFormData';
+import Card from './Card';
+import { Wrapper } from './style';
 
 const OrderList = observer(() => {
   const items = myOrderFormData.getState();
