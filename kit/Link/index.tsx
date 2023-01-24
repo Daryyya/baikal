@@ -10,11 +10,9 @@ interface Props extends HTMLAttributes<HTMLAnchorElement> {
 
 const Link: FC<Props> = ({ page, variant, children, ...restProps }) => {
   return (
-    <>
-      <StyledLink variant={variant} href={page} {...restProps}>
-        {children}
-      </StyledLink>
-    </>
+    <StyledLink variant={variant} href={page} {...restProps}>
+      {children}
+    </StyledLink>
   );
 };
 

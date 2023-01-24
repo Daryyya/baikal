@@ -17,9 +17,7 @@ const ControlledInput: FC<Props> = ({ register, selectValue, onUpdate }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
-        const { USDRUB, USDCNY } = data?.quotes;
+        const { USDRUB, USDCNY } = data?.quotes || {};
         if (selectValue === 'USD') {
           onUpdate(USDRUB);
         } else if (selectValue === 'CYN') {
@@ -28,7 +26,7 @@ const ControlledInput: FC<Props> = ({ register, selectValue, onUpdate }) => {
           onUpdate(1);
         }
       })
-      .catch(console.log);
+      .catch(() => {});
   }, [selectValue]);
 
   return (

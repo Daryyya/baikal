@@ -8,7 +8,7 @@ import OrderForm from '../../component/OrderForm';
 import MobileOrderModal from '../../component/MobileOrderModal';
 import { myOrderFormData } from '../../store/orderFormData';
 
-const Order = observer(({}) => {
+const Order = observer(() => {
   const order = myOrderFormData.getState();
   const checkedItem = myOrderFormData.getCheckedItem();
   const [searchValue, setSearchValue] = useState('');

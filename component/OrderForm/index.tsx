@@ -1,11 +1,13 @@
 import React, { FC, useEffect } from 'react';
 import { observer } from 'mobx-react';
+import Link from 'next/link';
+import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 import {
   StyledForm,
   ItemWrapper,
   StyledImage,
   ItemName,
-  ButtonWrapper as ButtonWrapper,
+  ButtonWrapper,
   AmountInput,
   StyledMinus,
   AmountWrapper,
@@ -16,10 +18,8 @@ import {
 } from './style';
 import { Item, myOrderFormData } from '../../store/orderFormData';
 import Input from '../../kit/Input';
-import Link from 'next/link';
-import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 
-const OrderForm: FC = observer(({}) => {
+const OrderForm: FC = observer(() => {
   const order = myOrderFormData.getState();
   const checkedItem = myOrderFormData.getCheckedItem();
 

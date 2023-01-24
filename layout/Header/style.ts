@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import Link from '../../kit/Link';
 import NextLink from 'next/link';
+import Link from '../../kit/Link';
 
 export const StyledHeader = styled.header`
   position: fixed;

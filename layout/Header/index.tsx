@@ -1,12 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import logo from '../../public/img/logo.png';
 import menu from '../../public/img/menu.svg';
 import close from '../../public/img/close.svg';
 import { StyledHeader, Container, DesktopStyledLink, BurgerMenu } from './style';
-import NextLink from 'next/link';
-import NextImage from 'next/image';
-import { useRouter } from 'next/router';
 
 const Header = () => {
   const router = useRouter();
@@ -21,7 +20,7 @@ const Header = () => {
           Связаться
         </DesktopStyledLink>
         <BurgerMenu href={router.route === '/contact' ? '/' : '/contact'}>
-          <NextImage src={router.route === '/contact' ? close : menu} width={22} height={22} alt="" />
+          <Image src={router.route === '/contact' ? close : menu} width={22} height={22} alt="" />
         </BurgerMenu>
       </Container>
     </StyledHeader>

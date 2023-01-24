@@ -15,6 +15,7 @@ export interface Item {
 
 class OrderFormData {
   private order: Item[] = [];
+
   private checkedItem: Item | undefined = undefined;
 
   constructor() {

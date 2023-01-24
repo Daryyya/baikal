@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { StyledForm, StyledInput, StyledButton } from './style';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { StyledForm, StyledInput, StyledButton } from './style';
 
 interface Fields {
   name: string;

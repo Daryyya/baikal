@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { Wrapper } from './style';
+
 interface Props {
   children: ReactNode;
   className?: string;

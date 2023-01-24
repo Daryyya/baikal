@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useRouter } from 'next/router';
 import backArrow from '../../public/img/arrow-back.svg';
 import { Form, StyledInput, BackButton } from './style';
-import { useRouter } from 'next/router';
 
 interface Fields {
   search: string;

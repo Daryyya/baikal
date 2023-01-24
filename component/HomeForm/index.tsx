@@ -1,5 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
+import { observer } from 'mobx-react';
 import {
   StyledForm,
   StyledButton,
@@ -10,14 +12,11 @@ import {
   DesktopButtonContent,
   MobileButtonContent,
 } from './style';
-import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 import ControlledInput from './ControlledInput';
 import ControlledSelect from './ControlledSelect';
 import { currencies } from './currencies';
 import { chineseCities } from './chineseCities';
-import { Fields } from '../../store/directionFormData';
-import { myDirectionFormData } from '../../store/directionFormData';
-import { observer } from 'mobx-react';
+import { Fields, myDirectionFormData } from '../../store/directionFormData';
 import { russianCities } from './russianCities';
 
 const HomeForm = observer(() => {

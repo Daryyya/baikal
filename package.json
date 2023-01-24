@@ -6,9 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint-next": "next lint",
     "format": "prettier --write --check .",
-    "lint-js": "eslint --fix"
+    "lint-es": "eslint --fix ./",
+    "lint": "npm run lint-next && npm run format && npm run lint-es"
   },
   "dependencies": {
     "@emotion/css": "^11.10.5",

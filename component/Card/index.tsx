@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
+import { observer } from 'mobx-react';
 import { Container, ItemName, StyledImage, StyledButton } from './style';
 import { Item, myOrderFormData } from '../../store/orderFormData';
-import { observer } from 'mobx-react';
 
 interface Props {
   item: Item;
