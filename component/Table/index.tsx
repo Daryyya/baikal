@@ -10,6 +10,7 @@ import {
   StyledRow,
   StyledCellContent,
   StyledImage,
+  StyledTFoot
 } from './style';
 
 const titles = [
@@ -74,6 +75,35 @@ const Table = observer(() => {
           );
         })}
       </tbody>
+      <StyledTFoot>
+        <StyledRow>
+          <StyledCell>
+            <StyledCellContent>Итого</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.amount), 0)}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.netWeight), 0)}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.grossWeight), 0)}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.volume), 0)}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.cost), 0)}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>
+              <button type='button'>
+                Сбросить
+              </button>
+            </StyledCellContent>
+          </StyledCell>
+        </StyledRow>
+      </StyledTFoot>
     </StyledTable>
   );
 });

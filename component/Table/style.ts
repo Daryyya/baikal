@@ -68,8 +68,6 @@ export const StyledRow = styled.tr`
 `;
 
 export const StyledCell = styled.td`
-  background-color: var(--barely-grey);
-
   &:first-of-type div {
     padding: 0 15px 0 1px;
     display: grid;
@@ -83,13 +81,13 @@ export const StyledCell = styled.td`
 `;
 
 export const StyledCellContent = styled.div`
+  background-color: var(--barely-grey);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #e2e4ea;
   min-height: 99px;
   padding: 8px;
-  font-weight: 600;
   font-size: 14px;
   line-height: 1;
   letter-spacing: -1px;
@@ -100,4 +98,17 @@ export const StyledImage = styled(Image)`
   height: 95px;
   width: 120px;
   object-fit: cover;
+`;
+
+export const StyledTFoot = styled.tfoot`
+  font-weight: 600;
+  & td {
+    padding-top: 10px;
+  }
+  & td:first-of-type div {
+    width: 116px;
+    margin-left: auto;
+    text-align: center;
+    grid-template-columns: 116px;
+  }
 `;
