@@ -46,6 +46,29 @@ class OrderFormData {
   public getCheckedItem() {
     return this.checkedItem;
   }
+
+  public reset() {
+    this.order = [];
+  }
+
+  public getTotalValue() {
+    return this.order.reduce(
+      (acc, el) => ({
+        totalAmount: acc.totalAmount + Number(el.amount),
+        totalNetWeight: acc.totalNetWeight + Number(el.netWeight),
+        totalGrossWeight: acc.totalGrossWeight + Number(el.grossWeight),
+        totalVolume: acc.totalVolume + Number(el.volume),
+        totalCost: acc.totalCost + Number(el.cost),
+      }),
+      {
+        totalAmount: 0,
+        totalNetWeight: 0,
+        totalGrossWeight: 0,
+        totalVolume: 0,
+        totalCost: 0,
+      }
+    )
+  }
 }
 
 export const myOrderFormData = new OrderFormData();

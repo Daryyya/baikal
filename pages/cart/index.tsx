@@ -33,6 +33,7 @@ const Cart = observer(() => {
           </StyledButton>
         )}
       </ButtonsWrapper>
+      <p>Стоимость доставки: <span>.</span></p>
     </Wrapper>
   );
 });

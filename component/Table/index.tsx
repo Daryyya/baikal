@@ -10,7 +10,8 @@ import {
   StyledRow,
   StyledCellContent,
   StyledImage,
-  StyledTFoot
+  StyledTFoot,
+  ResetButton,
 } from './style';
 
 const titles = [
@@ -25,6 +26,8 @@ const titles = [
 
 const Table = observer(() => {
   const order = myOrderFormData.getState();
+  const totalValue = myOrderFormData.getTotalValue();
+
   return (
     <StyledTable>
       <StyledThead>
@@ -78,28 +81,28 @@ const Table = observer(() => {
       <StyledTFoot>
         <StyledRow>
           <StyledCell>
-            <StyledCellContent>Итого</StyledCellContent>
+            <StyledCellContent>Итого:</StyledCellContent>
           </StyledCell>
           <StyledCell>
-            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.amount), 0)}</StyledCellContent>
+            <StyledCellContent>{totalValue.totalAmount}</StyledCellContent>
           </StyledCell>
           <StyledCell>
-            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.netWeight), 0)}</StyledCellContent>
+            <StyledCellContent>{totalValue.totalNetWeight}</StyledCellContent>
           </StyledCell>
           <StyledCell>
-            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.grossWeight), 0)}</StyledCellContent>
+            <StyledCellContent>{totalValue.totalGrossWeight}</StyledCellContent>
           </StyledCell>
           <StyledCell>
-            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.volume), 0)}</StyledCellContent>
+            <StyledCellContent>{totalValue.totalVolume}</StyledCellContent>
           </StyledCell>
           <StyledCell>
-            <StyledCellContent>{order.reduce((acc, el) => acc + Number(el.cost), 0)}</StyledCellContent>
+            <StyledCellContent>{totalValue.totalCost}</StyledCellContent>
           </StyledCell>
           <StyledCell>
             <StyledCellContent>
-              <button type='button'>
+              <ResetButton type="button" onClick={myOrderFormData.reset}>
                 Сбросить
-              </button>
+              </ResetButton>
             </StyledCellContent>
           </StyledCell>
         </StyledRow>

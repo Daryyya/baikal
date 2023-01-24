@@ -42,7 +42,7 @@ export const HeadTitle = styled.div`
   height: 80px;
   padding: 8px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
@@ -88,7 +88,7 @@ export const StyledCellContent = styled.div`
   border: 2px solid #e2e4ea;
   min-height: 99px;
   padding: 8px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
@@ -110,5 +110,16 @@ export const StyledTFoot = styled.tfoot`
     margin-left: auto;
     text-align: center;
     grid-template-columns: 116px;
+  }
+`;
+
+export const ResetButton = styled.button`
+  color: var(--blue);
+  font-weight: inherit;
+  transition: 150ms;
+  padding: 7px 4px;
+
+  &:hover {
+    opacity: 0.7;
   }
 `;
