@@ -4,7 +4,7 @@ import item3 from '../../public/img/item3.jpg';
 import item4 from '../../public/img/item4.png';
 import { Item } from '../../store/orderFormData';
 
-export const data:Item[] = [
+export const data: Item[] = [
   {
     id: 1,
     name: 'Стул',
@@ -45,4 +45,4 @@ export const data:Item[] = [
     name: 'Диван-кровать, раскладывается',
     image: item4,
   },
-]
+];

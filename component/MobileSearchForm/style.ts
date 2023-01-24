@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import Input from '../../kit/Input';
 
 export const Form = styled.form`
@@ -49,7 +49,7 @@ export const StyledInput = styled(Input)`
   border-radius: 0;
 
   @media (max-width: 1200px) {
-    padding: 7px 2px ;
+    padding: 7px 2px;
     height: auto;
   }
   @media (max-width: 375px) {

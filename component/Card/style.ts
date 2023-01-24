@@ -1,13 +1,13 @@
-import styled from "@emotion/styled";
-import Image from "next/image";
-import Button from "../../kit/Button";
+import styled from '@emotion/styled';
+import Image from 'next/image';
+import Button from '../../kit/Button';
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--barely-grey);
-  border: 1px solid #E2E4EA;
+  border: 1px solid #e2e4ea;
   border-radius: 3px;
   padding-right: 27px;
 
@@ -16,9 +16,9 @@ export const Container = styled.div`
   }
 `;
 
-export const StyledImage= styled(Image)`
+export const StyledImage = styled(Image)`
   height: 97px;
-   @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     width: 69px;
     height: 48px;
   }
@@ -47,4 +47,3 @@ export const StyledButton = styled(Button)`
     line-height: 1;
   }
 `;
-

@@ -9,18 +9,18 @@ export interface Fields {
 
 class DirectionFormData {
   private state: Fields = {
-    from: "", 
-    to: "Москва",
-    currency: "USD",
+    from: '',
+    to: 'Москва',
+    currency: 'USD',
     rate: 0,
-  }
+  };
 
   constructor() {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   public setState(state: Fields) {
-    this.state = state
+    this.state = state;
   }
 
   public getState() {

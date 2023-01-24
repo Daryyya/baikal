@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import BaseInput from "../../../kit/Input";
+import styled from '@emotion/styled';
+import BaseInput from '../../../kit/Input';
 
 export const Input = styled(BaseInput)`
   padding: 15px 30px;
@@ -16,6 +16,6 @@ export const Input = styled(BaseInput)`
     height: 58px;
   }
   @media (max-width: 375px) {
-      min-width: 138px;
+    min-width: 138px;
   }
 `;
