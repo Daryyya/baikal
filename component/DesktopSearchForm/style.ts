@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import Button from "../../kit/Button";
-import Input from "../../kit/Input";
+import styled from '@emotion/styled';
+import Button from '../../kit/Button';
+import Input from '../../kit/Input';
 
 export const StyledForm = styled.form`
   display: flex;
@@ -17,7 +17,6 @@ export const StyledInput = styled(Input)`
   line-height: 1;
   margin-right: 8px;
 `;
-
 
 export const StyledButton = styled(Button)`
   padding: 18px 30px;

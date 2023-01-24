@@ -1,6 +1,6 @@
-import React, { FC, ReactNode } from "react";
-import Header from "./Header";
-import { Main } from "./styles";
+import React, { FC, ReactNode } from 'react';
+import Header from './Header';
+import { Main } from './styles';
 
 interface Props {
   children: ReactNode;

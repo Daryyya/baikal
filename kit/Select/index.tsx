@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { Props as BaseProps } from "react-select";
-import { StyledSelect, Label, Wrapper } from "./style";
+import React, { FC } from 'react';
+import { Props as BaseProps } from 'react-select';
+import { StyledSelect, Label, Wrapper } from './style';
 
 interface Option {
   label: string;
@@ -8,7 +8,7 @@ interface Option {
 }
 
 export interface Proprs extends BaseProps {
-  options: Option[]
+  options: Option[];
   hasArrow?: boolean;
   topTitle?: string;
 }
@@ -22,7 +22,7 @@ const Select: FC<Proprs> = ({ hasArrow = true, topTitle, value, onChange, ...res
         value={{ label: value, value }}
         onChange={(option, meta) => {
           if (onChange) {
-            onChange((option as any)?.value, meta)
+            onChange((option as any)?.value, meta);
           }
         }}
         classNamePrefix="react-select"

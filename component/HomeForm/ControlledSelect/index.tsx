@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { Controller } from "react-hook-form";
-import { Proprs as SelectProps } from "../../../kit/Select";
+import React, { FC } from 'react';
+import { Controller } from 'react-hook-form';
+import { Proprs as SelectProps } from '../../../kit/Select';
 import { StyledSelect } from './style';
 
 interface Props extends SelectProps {
@@ -10,7 +10,7 @@ interface Props extends SelectProps {
   lastChild?: boolean;
 }
 
-const ControlledSelect: FC<Props> = ({control, firstChild, lastChild, ...selectProps}) => {
+const ControlledSelect: FC<Props> = ({ control, firstChild, lastChild, ...selectProps }) => {
   return (
     <Controller
       control={control}
@@ -18,9 +18,7 @@ const ControlledSelect: FC<Props> = ({control, firstChild, lastChild, ...selectP
       rules={{
         required: true,
       }}
-      render={({
-        field: { onChange, onBlur, value, name },
-      }) => (
+      render={({ field: { onChange, onBlur, value, name } }) => (
         <StyledSelect
           {...selectProps}
           firstChild={firstChild}

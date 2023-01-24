@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import Image from "next/image";
+import styled from '@emotion/styled';
+import Image from 'next/image';
 
 export const StyledTable = styled.table`
   margin-top: 45px;
@@ -16,14 +16,14 @@ export const StyledHead = styled.th`
   padding-bottom: 10px;
 
   &:not(:first-of-type) div {
-    border: 2px solid #E2E4EA;
+    border: 2px solid #e2e4ea;
     background-color: var(--barely-grey);
   }
   &:nth-of-type(2) div {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     word-break: keep-all;
-    min-width: 73px
+    min-width: 73px;
   }
   &:not(:nth-of-type(2)) div {
     border-left: none;
@@ -86,7 +86,7 @@ export const StyledCellContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #E2E4EA;
+  border: 2px solid #e2e4ea;
   min-height: 99px;
   padding: 8px;
   font-weight: 600;

@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
-import Image from "next/image";
-import Button from "../../kit/Button";
-import Input from "../../kit/Input";
+import styled from '@emotion/styled';
+import Image from 'next/image';
+import Button from '../../kit/Button';
+import Input from '../../kit/Input';
 
 export const StyledForm = styled.form`
-background-color: var(--semilight-blue);
+  background-color: var(--semilight-blue);
   display: grid;
   gap: 15px;
 
@@ -16,7 +16,7 @@ background-color: var(--semilight-blue);
 `;
 
 export const ItemWrapper = styled.div`
-  background-color: #F8FAFF;
+  background-color: #f8faff;
   display: flex;
   align-items: center;
   border-radius: 3px;
@@ -37,7 +37,7 @@ export const ItemName = styled.p`
   color: var(--grey);
   @media (max-width: 1200px) {
     margin: 0 25px;
-}
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -72,9 +72,7 @@ export const StyledText = styled.p`
   margin-right: 35px;
 `;
 
-export const StyledInput = styled(Input)`
-  
-`;
+export const StyledInput = styled(Input)``;
 
 export const Buttons = styled.div`
   display: grid;
@@ -84,7 +82,7 @@ export const Buttons = styled.div`
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
-}
+  }
 `;
 
 export const StyledButton = styled(Button)`

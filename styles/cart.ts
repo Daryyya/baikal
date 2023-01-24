@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import Button from "../kit/Button";
-import Link from "../kit/Link";
+import styled from '@emotion/styled';
+import Button from '../kit/Button';
+import Link from '../kit/Link';
 
 export const Wrapper = styled.div`
   min-height: calc(100vh - var(--header-height));

@@ -18,15 +18,15 @@ class OrderFormData {
   private checkedItem: Item | undefined = undefined;
 
   constructor() {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   public addItem(item: Item, key: number) {
-    this.order = [...this.order, {...item, key}]
+    this.order = [...this.order, { ...item, key }];
   }
 
   public removeItem(item: Item) {
-    this.order = this.order.filter(el => el.key !== item.key)
+    this.order = this.order.filter((el) => el.key !== item.key);
   }
 
   public editItem(item: Item, key: number) {
@@ -39,7 +39,7 @@ class OrderFormData {
   }
 
   public setCheckedItem(item?: Item) {
-    this.checkedItem = item
+    this.checkedItem = item;
   }
 
   public getCheckedItem() {

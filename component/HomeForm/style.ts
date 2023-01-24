@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import Button from "../../kit/Button";
-import Tooltip from "./Tooltip";
+import styled from '@emotion/styled';
+import Button from '../../kit/Button';
+import Tooltip from './Tooltip';
 
 export const StyledForm = styled.form`
   position: relative;
@@ -41,7 +41,6 @@ export const MobileButtonContent = styled.span`
   }
 `;
 
-
 export const StyledTooltipOne = styled(Tooltip)`
   top: 110px;
 
@@ -69,5 +68,3 @@ export const StyledSvgTwo = styled(StyledSvgOne)`
   transform: rotate(180deg);
   top: 5px;
 `;
-
-
