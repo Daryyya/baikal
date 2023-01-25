@@ -38,16 +38,13 @@ export const Title = styled.h1`
 `;
 
 export const ButtonsWrapper = styled.div`
-  position: fixed;
-  right: 97px;
-  bottom: 50px;
   display: flex;
   gap: 12px;
-  justify-content: space-between;
+  justify-content: end;
+  text-align: center;
+  margin-bottom: 48px;
   @media (max-width: 1200px) {
-    flex-direction: column;
-    right: 50%;
-    transform: translateX(50%);
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -57,4 +54,54 @@ export const StyledButton = styled(Button)`
 
 export const StyledLink = styled(Link)`
   padding: 19px 50px;
+`;
+
+export const StyledP = styled.p`
+  color: var(--grey);
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  text-align: end;
+  &:not(:last-of-type) {
+    margin-bottom: 28px;
+  }
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+  & span {
+    display: inline-block;
+    min-width: 210px;
+  }
+`;
+
+export const Sum = styled.p`
+  font-weight: 600;
+  font-size: 31px;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  color: var(--grey);
+  margin-bottom: 48px;
+  text-align: end;
+  & span {
+    display: inline-block;
+    min-width: 210px;
+  }
+`;
+
+export const BottomLinksWrapper = styled(ButtonsWrapper)`
+  display: grid;
+  grid-template-columns: 233px 299px;
+`;
+
+export const StyledSaveLink = styled(Button)`
+  display: grid;
+  padding-right: 18px;
+  padding-left: 20px;
+  grid-auto-flow: column;
+  align-items: center;
+  & svg {
+    position: relative;
+    left: 8px;
+    top: 1px;
+  }
 `;

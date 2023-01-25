@@ -26,8 +26,9 @@ const blueCss = css`
 `;
 
 const outlineCss = css`
-  border: 1px solid yellow;
-  color: red;
+  padding: 19px 35px;
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
 `;
 
 export const commonStyle = (variant: StyledLinkOrButtonProps['variant']) => css`
