@@ -32,7 +32,7 @@ export const Title = styled.h1`
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.2px;
-    margin-bottom: 30px;
+    margin: 20px 0 30px;
     padding: 0 20px;
   }
 `;
@@ -43,17 +43,22 @@ export const ButtonsWrapper = styled.div`
   justify-content: end;
   text-align: center;
   margin-bottom: 48px;
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 export const StyledButton = styled(Button)`
   padding: 19px 50px;
+   @media (max-width: 1200px) {
+    padding: 19px 35px;
+    flex: 1 0 calc(50% - 6px);
+  } 
 `;
 
 export const StyledLink = styled(Link)`
   padding: 19px 50px;
+  @media (max-width: 1200px) {
+    padding: 19px 35px;
+    flex: 1 0 calc(50% - 6px);
+  } 
 `;
 
 export const StyledP = styled.p`
@@ -91,6 +96,11 @@ export const Sum = styled.p`
 export const BottomLinksWrapper = styled(ButtonsWrapper)`
   display: grid;
   grid-template-columns: 233px 299px;
+  padding-bottom: 48px;
+  margin-bottom: 0;
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr ;
+  }
 `;
 
 export const StyledSaveLink = styled(Button)`
@@ -103,5 +113,9 @@ export const StyledSaveLink = styled(Button)`
     position: relative;
     left: 8px;
     top: 1px;
+  }
+  @media (max-width: 1200px) {
+    justify-content: center;
+    order: 2;
   }
 `;

@@ -47,7 +47,7 @@ class OrderFormData {
     return this.checkedItem;
   }
 
-  public reset() {
+  public reset = () => {
     this.order = [];
   }
 
