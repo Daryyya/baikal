@@ -11,26 +11,21 @@ import {
   StyledLink,
   Title,
   EmptyWarning,
-  StyledP,
-  Sum,
-  BottomLinksWrapper,
-  StyledSaveLink,
+  StyledCartSum,
 } from '../../styles/cart';
 import sofa from '../../public/img/sofa.png';
+import MobileCartSum from '../../component/MobileCartSum';
 
 const Cart = observer(() => {
   const [isCounted, setIsCounted] = useState(false);
   const order = myOrderFormData.getState();
-  const totalValue = myOrderFormData.getTotalValue();
-  const deliveryCost = totalValue.totalVolume * 300;
-  const customCost = totalValue.totalGrossWeight * 2.5;
   return (
     <Wrapper>
       {!!order.length && <Title>Добавленная мебель ({order.length})</Title>}
       {order.length ? (
         <>
-          <Table/>
-          <OrderList />
+          <Table />
+          {!isCounted && <OrderList />}
         </>
       ) : (
         <EmptyWarning>
@@ -48,30 +43,8 @@ const Cart = observer(() => {
           </StyledButton>
         )}
       </ButtonsWrapper>
-      {!!order.length && isCounted && (
-        <>
-          <StyledP>
-            Стоимость доставки: <span>{deliveryCost}&nbsp;руб.</span>
-          </StyledP>
-          <StyledP>
-            Таможенные платежи: <span>{customCost}&nbsp;руб.</span>
-          </StyledP>
-          <Sum>
-            Итого: <span>{deliveryCost + customCost}&nbsp;руб.</span>{' '}
-          </Sum>
-          <BottomLinksWrapper>
-            <StyledSaveLink variant="outline" type="button">
-              Сохранить расчёт
-              <svg width="27" height="11" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#5daaff" strokeWidth="1.5" />
-              </svg>
-            </StyledSaveLink>
-            <StyledLink href="/contact" variant="blue">
-              Связаться по доставке
-            </StyledLink>
-          </BottomLinksWrapper>
-        </>
-      )}
+      {!!order.length && isCounted && <MobileCartSum />}
+      {!!order.length && isCounted && <StyledCartSum />}
     </Wrapper>
   );
 });

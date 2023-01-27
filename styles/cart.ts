@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Button from '../kit/Button';
 import Link from '../kit/Link';
+import CartSum from '../component/CartSum';
 
 export const Wrapper = styled.div`
   min-height: calc(100vh - var(--header-height));
@@ -61,61 +62,8 @@ export const StyledLink = styled(Link)`
   } 
 `;
 
-export const StyledP = styled.p`
-  color: var(--grey);
-  font-size: 23px;
-  line-height: 1;
-  letter-spacing: 0.2px;
-  text-align: end;
-  &:not(:last-of-type) {
-    margin-bottom: 28px;
-  }
-  &:last-of-type {
-    margin-bottom: 40px;
-  }
-  & span {
-    display: inline-block;
-    min-width: 210px;
-  }
-`;
-
-export const Sum = styled.p`
-  font-weight: 600;
-  font-size: 31px;
-  line-height: 1;
-  letter-spacing: 0.2px;
-  color: var(--grey);
-  margin-bottom: 48px;
-  text-align: end;
-  & span {
-    display: inline-block;
-    min-width: 210px;
-  }
-`;
-
-export const BottomLinksWrapper = styled(ButtonsWrapper)`
-  display: grid;
-  grid-template-columns: 233px 299px;
-  padding-bottom: 48px;
-  margin-bottom: 0;
+export const StyledCartSum = styled(CartSum)`
   @media (max-width: 1200px) {
-    grid-template-columns: 1fr ;
-  }
-`;
-
-export const StyledSaveLink = styled(Button)`
-  display: grid;
-  padding-right: 18px;
-  padding-left: 20px;
-  grid-auto-flow: column;
-  align-items: center;
-  & svg {
-    position: relative;
-    left: 8px;
-    top: 1px;
-  }
-  @media (max-width: 1200px) {
-    justify-content: center;
-    order: 2;
+    display: none;
   }
 `;
