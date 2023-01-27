@@ -27,7 +27,7 @@ const Order = observer(() => {
       </RightColumn>
       <MobileOrderModal />
       {!!order.length && !checkedItem?.key && (
-        <MobileCartLink variant="blue" page="/cart">
+        <MobileCartLink variant="blue" href="/cart">
           Корзина&nbsp;({order.length})
         </MobileCartLink>
       )}

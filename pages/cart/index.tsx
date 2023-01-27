@@ -1,13 +1,23 @@
 import { observer } from 'mobx-react';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import OrderList from '../../component/OrderList';
 import Table from '../../component/Table';
 import { myOrderFormData } from '../../store/orderFormData';
-import { Wrapper, ButtonsWrapper, StyledButton, StyledLink, Title, EmptyWarning } from '../../styles/cart';
+import {
+  Wrapper,
+  ButtonsWrapper,
+  StyledButton,
+  StyledLink,
+  Title,
+  EmptyWarning,
+  StyledCartSum,
+} from '../../styles/cart';
 import sofa from '../../public/img/sofa.png';
+import MobileCartSum from '../../component/MobileCartSum';
 
 const Cart = observer(() => {
+  const [isCounted, setIsCounted] = useState(false);
   const order = myOrderFormData.getState();
   return (
     <Wrapper>
@@ -15,7 +25,7 @@ const Cart = observer(() => {
       {order.length ? (
         <>
           <Table />
-          <OrderList />
+          {!isCounted && <OrderList />}
         </>
       ) : (
         <EmptyWarning>
@@ -24,15 +34,17 @@ const Cart = observer(() => {
         </EmptyWarning>
       )}
       <ButtonsWrapper>
-        <StyledLink variant="blue" page="/order">
+        <StyledLink variant="blue" href="/order">
           Добавить
         </StyledLink>
         {!!order.length && (
-          <StyledButton variant="blue" type="button">
+          <StyledButton variant="blue" type="button" onClick={() => setIsCounted(true)}>
             Рассчитать
           </StyledButton>
         )}
       </ButtonsWrapper>
+      {!!order.length && isCounted && <MobileCartSum />}
+      {!!order.length && isCounted && <StyledCartSum />}
     </Wrapper>
   );
 });

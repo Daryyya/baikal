@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Button from '../kit/Button';
 import Link from '../kit/Link';
+import CartSum from '../component/CartSum';
 
 export const Wrapper = styled.div`
   min-height: calc(100vh - var(--header-height));
@@ -32,29 +33,37 @@ export const Title = styled.h1`
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.2px;
-    margin-bottom: 30px;
+    margin: 20px 0 30px;
     padding: 0 20px;
   }
 `;
 
 export const ButtonsWrapper = styled.div`
-  position: fixed;
-  right: 97px;
-  bottom: 50px;
   display: flex;
   gap: 12px;
-  justify-content: space-between;
-  @media (max-width: 1200px) {
-    flex-direction: column;
-    right: 50%;
-    transform: translateX(50%);
-  }
+  justify-content: end;
+  text-align: center;
+  margin-bottom: 48px;
 `;
 
 export const StyledButton = styled(Button)`
   padding: 19px 50px;
+   @media (max-width: 1200px) {
+    padding: 19px 35px;
+    flex: 1 0 calc(50% - 6px);
+  } 
 `;
 
 export const StyledLink = styled(Link)`
   padding: 19px 50px;
+  @media (max-width: 1200px) {
+    padding: 19px 35px;
+    flex: 1 0 calc(50% - 6px);
+  } 
+`;
+
+export const StyledCartSum = styled(CartSum)`
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;

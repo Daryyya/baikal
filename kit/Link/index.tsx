@@ -3,14 +3,14 @@ import { StyledLinkOrButtonProps } from '../buttonAndLinkCommonStyle';
 import { StyledLink } from './style';
 
 interface Props extends HTMLAttributes<HTMLAnchorElement> {
-  page: string;
+  href: string;
   variant: StyledLinkOrButtonProps['variant'];
   children: ReactNode;
 }
 
-const Link: FC<Props> = ({ page, variant, children, ...restProps }) => {
+const Link: FC<Props> = ({ children, ...restProps }) => {
   return (
-    <StyledLink variant={variant} href={page} {...restProps}>
+    <StyledLink {...restProps}>
       {children}
     </StyledLink>
   );

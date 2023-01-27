@@ -10,6 +10,8 @@ import {
   StyledRow,
   StyledCellContent,
   StyledImage,
+  StyledTFoot,
+  ResetButton,
 } from './style';
 
 const titles = [
@@ -24,6 +26,8 @@ const titles = [
 
 const Table = observer(() => {
   const order = myOrderFormData.getState();
+  const totalValue = myOrderFormData.getTotalValue();
+
   return (
     <StyledTable>
       <StyledThead>
@@ -64,8 +68,8 @@ const Table = observer(() => {
                 <StyledCellContent>
                   <button type="button" onClick={() => myOrderFormData.removeItem(item)}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="red" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 4L15.5385 16" stroke="red" stroke-width="1.5" stroke-linecap="round" />
-                      <path d="M16 4L4.46154 16" stroke="red" stroke-width="1.5" stroke-linecap="round" />
+                      <path d="M4 4L15.5385 16" stroke="red" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M16 4L4.46154 16" stroke="red" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </button>
                 </StyledCellContent>
@@ -74,6 +78,35 @@ const Table = observer(() => {
           );
         })}
       </tbody>
+      <StyledTFoot>
+        <StyledRow>
+          <StyledCell>
+            <StyledCellContent>Итого:</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{totalValue.totalAmount}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{totalValue.totalNetWeight}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{totalValue.totalGrossWeight}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{totalValue.totalVolume}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>{totalValue.totalCost}</StyledCellContent>
+          </StyledCell>
+          <StyledCell>
+            <StyledCellContent>
+              <ResetButton type="button" onClick={myOrderFormData.reset}>
+                Сбросить
+              </ResetButton>
+            </StyledCellContent>
+          </StyledCell>
+        </StyledRow>
+      </StyledTFoot>
     </StyledTable>
   );
 });

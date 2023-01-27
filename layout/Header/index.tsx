@@ -16,7 +16,7 @@ const Header = () => {
         <NextLink href="/">
           <Image src={logo} alt="logo" width={163} height={40} />
         </NextLink>
-        <DesktopStyledLink page="/contact" variant="white">
+        <DesktopStyledLink href="/contact" variant="white">
           Связаться
         </DesktopStyledLink>
         <BurgerMenu href={router.route === '/contact' ? '/' : '/contact'}>
