@@ -21,14 +21,9 @@ import { russianCities } from './russianCities';
 
 const HomeForm = observer(() => {
   const router = useRouter();
-
+  const defaultValues = myDirectionFormData.getState();
   const { register, handleSubmit, control, setValue, formState } = useForm<Fields>({
-    defaultValues: {
-      from: '',
-      to: 'Москва',
-      currency: 'USD',
-      rate: 0,
-    },
+    defaultValues,
     mode: 'all',
   });
   const { currency } = useWatch({ control });

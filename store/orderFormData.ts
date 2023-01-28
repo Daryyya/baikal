@@ -43,6 +43,10 @@ class OrderFormData {
     this.checkedItem = item;
   }
 
+  public removeCheckedItem = () => {
+    this.checkedItem = undefined;
+  }
+
   public getCheckedItem() {
     return this.checkedItem;
   }

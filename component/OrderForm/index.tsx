@@ -2,6 +2,8 @@ import React, { FC, useEffect } from 'react';
 import { observer } from 'mobx-react';
 import Link from 'next/link';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
+import { Item, myOrderFormData } from '../../store/orderFormData';
+import Input from '../../kit/Input';
 import {
   StyledForm,
   ItemWrapper,
@@ -16,8 +18,6 @@ import {
   StyledButton,
   CartLinkText,
 } from './style';
-import { Item, myOrderFormData } from '../../store/orderFormData';
-import Input from '../../kit/Input';
 
 const OrderForm: FC = observer(() => {
   const order = myOrderFormData.getState();
@@ -39,7 +39,7 @@ const OrderForm: FC = observer(() => {
     } else {
       myOrderFormData.addItem({ ...checkedItem, ...data }, Date.now());
     }
-    myOrderFormData.setCheckedItem(undefined);
+    myOrderFormData.removeCheckedItem();
   };
 
   if (order.length === 0 && !checkedItem) {

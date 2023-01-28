@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Modal = styled.div`
+export const Popup = styled.div`
   position: fixed;
   top: 64px;
   left: 0;

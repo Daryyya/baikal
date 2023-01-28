@@ -1,14 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import { observer } from 'mobx-react';
 import { useRouter } from 'next/router';
 import logo from '../../public/img/logo.png';
 import menu from '../../public/img/menu.svg';
 import close from '../../public/img/close.svg';
-import { StyledHeader, Container, DesktopStyledLink, BurgerMenu } from './style';
+import { myDirectionFormData } from '../../store/directionFormData';
+import { StyledHeader, Container, DesktopStyledLink, BurgerMenu, StyledP } from './style';
 
-const Header = () => {
+const Header = observer(() => {
   const router = useRouter();
+  const direction = myDirectionFormData.getState();
+  const { currency, from, to } = direction;
 
   return (
     <StyledHeader>
@@ -16,6 +20,16 @@ const Header = () => {
         <NextLink href="/">
           <Image src={logo} alt="logo" width={163} height={40} />
         </NextLink>
+        {from && (
+          <StyledP>
+            <span>{from}</span>&nbsp;
+            <svg width="15" height="6" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#606F7A" stroke-width="1.5" />
+            </svg>
+            &nbsp;
+            <span>{to}</span>,&nbsp;<span>{currency}</span>
+          </StyledP>
+        )}
         <DesktopStyledLink href="/contact" variant="white">
           Связаться
         </DesktopStyledLink>
@@ -25,6 +39,6 @@ const Header = () => {
       </Container>
     </StyledHeader>
   );
-};
+});
 
 export default Header;
