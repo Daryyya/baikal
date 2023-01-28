@@ -4,8 +4,21 @@ import inst from '../../public/img/instagram.png';
 import fb from '../../public/img/facebook.png';
 import whats from '../../public/img/whatsapp.png';
 import weChat from '../../public/img/weChat.png';
-import Link from '../../kit/Link';
-import {Wrapper, Title, StyledH2, Social, StyledP, StyledPLink, StyledInput, InputWrap, Textarea, TextareaName} from '../../styles/contact'
+import {
+  Wrapper,
+  Title,
+  StyledH2,
+  Social,
+  StyledP,
+  StyledPLink,
+  StyledInput,
+  InputWrap,
+  Textarea,
+  TextareaName,
+  SubmitButton,
+  AgreementP,
+  AgreementLink
+} from '../../styles/contact';
 
 const Contact = () => {
   return (
@@ -33,7 +46,7 @@ const Contact = () => {
             <Image src={whats} alt="whatsapp" width={50} height={50} />
             <span>Whatsapp</span>
           </StyledP>
-         
+
           <StyledP>
             <Image src={weChat} alt="weChat" width={50} height={50} />
             <span>WeChat</span>
@@ -42,17 +55,23 @@ const Contact = () => {
       </div>
       <form>
         <InputWrap>
-        <StyledInput type='text' placeholder='Имя и фамилия'/>
-        <StyledInput type='email' placeholder='Почта'/>
-        <StyledInput type='tel' placeholder='Телефон'/>
+          <StyledInput type="text" placeholder="Имя и фамилия" />
+          <StyledInput type="email" placeholder="Почта" />
+          <StyledInput type="tel" placeholder="Телефон" />
         </InputWrap>
         <TextareaName>Опишите ваш запрос</TextareaName>
         <Textarea />
-         
-        <Link href="/" variant="blue">
+
+        <SubmitButton type="submit" variant="blue">
           Связаться по доставке
-        </Link>
-        <p>Нажимая на кнопку, вы даете <span>согласие на обработку</span> согласие на обработку своих персональных данных</p>
+        </SubmitButton>
+        <AgreementP>
+          Нажимая на кнопку, вы даете{' '}
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <AgreementLink href="#">согласие на обработку</AgreementLink>{' '}
+          согласие на обработку своих персональных
+          данных
+        </AgreementP>
       </form>
     </Wrapper>
   );
