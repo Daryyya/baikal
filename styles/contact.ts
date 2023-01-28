@@ -1,15 +1,30 @@
 import styled from '@emotion/styled';
+import ContactForm from '../component/ContactForm';
 import Button from '../kit/Button';
-import Input from '../kit/Input';
 
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 547px 502px;
-  gap: 96px;
+  justify-content: space-between;
   max-width: 1440px;
   padding: 0 97px;
   margin: 0 auto;
   height: calc(100% - 137px);
+  @media (max-width: 1200px) {
+    max-width: 375px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    padding: 20px;
+    min-height: calc(100vh - 64px);
+  }
+`;
+
+export const ContactColumn = styled.div`
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -19,6 +34,9 @@ export const Title = styled.h1`
   font-weight: 400;
   color: var(--grey);
   margin-bottom: 70px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const StyledH2 = styled.h2`
@@ -27,6 +45,15 @@ export const StyledH2 = styled.h2`
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
+  @media (max-width: 1200px) {
+    &:not(:last-of-type) {
+      display: none;
+    }
+    text-align: center;
+    font-weight: 300;
+    font-size: 23px;
+    margin: auto 0 24px;
+  }
 `;
 
 export const Social = styled.div`
@@ -35,6 +62,12 @@ export const Social = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 70px 50px;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: none;
+    gap: 15px;
+    margin: 0 auto;
+  }
 `;
 
 export const StyledP = styled.p`
@@ -46,6 +79,11 @@ export const StyledP = styled.p`
   font-size: 23px;
   line-height: 1;
   letter-spacing: 0.2px;
+  @media (max-width: 1200px) {
+    span {
+      display: none;
+    }
+  }
 `;
 
 export const StyledPLink = styled.p`
@@ -65,54 +103,36 @@ export const StyledPLink = styled.p`
   a {
     color: var(--grey);
   }
+  @media (max-width: 1200px) {
+    display: block;
+    font-size: 28px;
+    letter-spacing: -1px;
+    text-align: center;
+    &:first-of-type {
+      margin-top: auto;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: 24px;
+    }
+    &:last-of-type {
+      margin-bottom: 36px;
+    }
+    span {
+      display: none;
+    }
+  }
 `;
 
-export const StyledInput = styled(Input)`
-  height: 53px;
-  width: 246px;
+export const DesktopContactForm = styled(ContactForm)`
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
-export const InputWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 134px 0 48px;
-`;
-
-export const Textarea = styled.textarea`
-  background-color: var(--white);
-  display: block;
-  margin-bottom: 20px;
-  width: 502px;
-  height: 124px;
-  padding: 10px;
-  border-radius: 3px;
-`;
-
-export const TextareaName = styled.p`
-  margin-bottom: 20px;
-  font-size: 17px;
-  line-height: 1;
-  letter-spacing: 0.2px;
-  color: var(--grey);
-`;
-
-export const SubmitButton = styled(Button)`
-  padding: 19px 31px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-`;
-
-export const AgreementP = styled.p`
-  font-weight: 600;
-  font-size: 17px;
-  line-height: 25px;
-  letter-spacing: 0.2px;
-  color: var(--light-grey);
-`;
-
-export const AgreementLink = styled.a`
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  color: var(--grey);
+export const StyledMobileButton = styled(Button)`
+  display: none;
+  @media (max-width: 1200px) {
+    display: block;
+    margin: 0 auto 30px;
+  }
 `;

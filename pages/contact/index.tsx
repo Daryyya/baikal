@@ -6,32 +6,32 @@ import whats from '../../public/img/whatsapp.png';
 import weChat from '../../public/img/weChat.png';
 import {
   Wrapper,
+  ContactColumn,
   Title,
   StyledH2,
   Social,
   StyledP,
   StyledPLink,
-  StyledInput,
-  InputWrap,
-  Textarea,
-  TextareaName,
-  SubmitButton,
-  AgreementP,
-  AgreementLink
+  DesktopContactForm,
+  StyledMobileButton,
 } from '../../styles/contact';
+// import ContactForm from '../../component/ContactForm';
 
 const Contact = () => {
   return (
     <Wrapper>
-      <div>
+      <ContactColumn>
         <Title>Свяжитесь с нами</Title>
         <StyledH2>Наши данные:</StyledH2>
         <StyledPLink>
-          Наша почта: <a href="mailto:asia@baikalvl.ru">asia@baikalvl.ru</a>
+          <span>Наша почта:</span> <a href="mailto:asia@baikalvl.ru">asia@baikalvl.ru</a>
         </StyledPLink>
         <StyledPLink>
-          Телефон: <a href="tel:8 800 201-87-77">8 800 201-87-77</a>
+          <span>Телефон:</span> <a href="tel:8 800 201-87-77">8 800 201-87-77</a>
         </StyledPLink>
+        <StyledMobileButton type="button" variant="white">
+          Связаться
+        </StyledMobileButton>
         <StyledH2>Мы в соц. сетях:</StyledH2>
         <Social>
           <StyledP>
@@ -52,27 +52,8 @@ const Contact = () => {
             <span>WeChat</span>
           </StyledP>
         </Social>
-      </div>
-      <form>
-        <InputWrap>
-          <StyledInput type="text" placeholder="Имя и фамилия" />
-          <StyledInput type="email" placeholder="Почта" />
-          <StyledInput type="tel" placeholder="Телефон" />
-        </InputWrap>
-        <TextareaName>Опишите ваш запрос</TextareaName>
-        <Textarea />
-
-        <SubmitButton type="submit" variant="blue">
-          Связаться по доставке
-        </SubmitButton>
-        <AgreementP>
-          Нажимая на кнопку, вы даете{' '}
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <AgreementLink href="#">согласие на обработку</AgreementLink>{' '}
-          согласие на обработку своих персональных
-          данных
-        </AgreementP>
-      </form>
+      </ContactColumn>
+      <DesktopContactForm />
     </Wrapper>
   );
 };
