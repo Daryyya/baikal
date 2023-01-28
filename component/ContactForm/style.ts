@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import Button from "../../kit/Button";
-import Input from "../../kit/Input";
+import styled from '@emotion/styled';
+import Button from '../../kit/Button';
+import Input from '../../kit/Input';
 
 export const StyledForm = styled.form`
   padding-top: 134px;

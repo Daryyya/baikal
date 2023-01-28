@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import Button from "../../kit/Button";
-import Link from "../../kit/Link";
+import styled from '@emotion/styled';
+import Button from '../../kit/Button';
+import Link from '../../kit/Link';
 
 export const StyledP = styled.p`
   color: var(--grey);
@@ -62,7 +62,7 @@ export const BottomLinksWrapper = styled.div`
   padding-bottom: 48px;
   margin-bottom: 0;
   @media (max-width: 1200px) {
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 `;
@@ -89,5 +89,5 @@ export const StyledLink = styled(Link)`
   @media (max-width: 1200px) {
     padding: 19px 35px;
     flex: 1 0 calc(50% - 6px);
-  } 
+  }
 `;

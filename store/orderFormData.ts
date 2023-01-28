@@ -45,7 +45,7 @@ class OrderFormData {
 
   public removeCheckedItem = () => {
     this.checkedItem = undefined;
-  }
+  };
 
   public getCheckedItem() {
     return this.checkedItem;
@@ -53,7 +53,7 @@ class OrderFormData {
 
   public reset = () => {
     this.order = [];
-  }
+  };
 
   public getTotalValue() {
     return this.order.reduce(
@@ -71,7 +71,7 @@ class OrderFormData {
         totalVolume: 0,
         totalCost: 0,
       }
-    )
+    );
   }
 }
 

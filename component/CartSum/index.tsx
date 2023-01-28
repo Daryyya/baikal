@@ -10,11 +10,11 @@ const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
   return (
     <div {...props}>
       <StyledP>
-        <span>Стоимость доставки:</span> 
+        <span>Стоимость доставки:</span>
         <span>{deliveryCost}&nbsp;руб.</span>
       </StyledP>
       <StyledP>
-        <span>Таможенные платежи:</span> 
+        <span>Таможенные платежи:</span>
         <span>{customCost}&nbsp;руб.</span>
       </StyledP>
       <Sum>

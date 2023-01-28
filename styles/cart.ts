@@ -48,10 +48,10 @@ export const ButtonsWrapper = styled.div`
 
 export const StyledButton = styled(Button)`
   padding: 19px 50px;
-   @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     padding: 19px 35px;
     flex: 1 0 calc(50% - 6px);
-  } 
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -59,7 +59,7 @@ export const StyledLink = styled(Link)`
   @media (max-width: 1200px) {
     padding: 19px 35px;
     flex: 1 0 calc(50% - 6px);
-  } 
+  }
 `;
 
 export const StyledCartSum = styled(CartSum)`
