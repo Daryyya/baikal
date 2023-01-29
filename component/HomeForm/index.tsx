@@ -46,7 +46,7 @@ const HomeForm = observer(() => {
         firstChild
         maxMenuHeight={200}
       />
-      <ControlledSelect control={control} options={russianCities} topTitle="Куда" name="to" maxMenuHeight={200}/>
+      <ControlledSelect control={control} options={russianCities} topTitle="Куда" name="to" maxMenuHeight={200} />
       <ControlledSelect control={control} options={currencies} topTitle="Валюта" name="currency" lastChild />
       <ControlledInput register={register} selectValue={currency || ''} onUpdate={(rate) => setValue('rate', rate)} />
       <StyledButton variant="blue" type="submit">

@@ -5,7 +5,7 @@ import { myOrderFormData } from '../../store/orderFormData';
 import { StyledP, BottomLinksWrapper, StyledSaveLink, Sum, StyledContactButton } from './style';
 
 const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
-  const { push } = useRouter()
+  const { push } = useRouter();
   const totalValue = myOrderFormData.getTotalValue();
   const deliveryCost = totalValue.totalVolume * 300;
   const customCost = totalValue.totalGrossWeight * 2.5;
@@ -31,7 +31,7 @@ const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
           </svg>
         </StyledSaveLink>
         <StyledContactButton
-          type='button'
+          type="button"
           variant="blue"
           onClick={() => {
             myOrderFormData.setIsContactFormOpen(true);

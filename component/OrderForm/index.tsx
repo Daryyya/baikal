@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import * as yup from 'yup';
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from '@hookform/resolvers/yup';
 import { observer } from 'mobx-react';
 import Link from 'next/link';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
@@ -28,7 +28,10 @@ interface FormFields extends OrderFormFields {
 const schema: yup.SchemaOf<FormFields> = yup.object().shape({
   amount: yup.number().required('1'),
   volume: yup.number().positive('looser!').required('2'),
-  netWeight: yup.number().test('', 'Введите число', (v) => !!v && !Number.isNaN(v)).required('3'),
+  netWeight: yup
+    .number()
+    .test('', 'Введите число', (v) => !!v && !Number.isNaN(v))
+    .required('3'),
   grossWeight: yup.number().required('4'),
   cost: yup.number().required('5'),
 });
@@ -42,7 +45,7 @@ const OrderForm: FC = observer(() => {
       ...checkedItem,
       amount: checkedItem?.amount || 1,
     },
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
   });
 
   useEffect(reset, [checkedItem]);
@@ -63,7 +66,7 @@ const OrderForm: FC = observer(() => {
 
   const onSubmit: SubmitHandler<FormFields> = (data) => {
     console.log(data);
-    
+
     // if (checkedItem?.key) {
     //   myOrderFormData.editItem({ ...checkedItem, ...data }, checkedItem.key);
     // } else {
@@ -73,7 +76,6 @@ const OrderForm: FC = observer(() => {
   };
 
   console.log(formState.errors);
-  
 
   const { name, image } = checkedItem;
   return (

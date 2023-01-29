@@ -10,7 +10,7 @@ import { myDirectionFormData } from '../../store/directionFormData';
 import { StyledHeader, Container, DesktopStyledLink, BurgerMenu, StyledP } from './style';
 
 const Header = observer(() => {
-  const {route} = useRouter();
+  const { route } = useRouter();
   const direction = myDirectionFormData.getState();
   const { currency, from, to } = direction;
 
@@ -28,8 +28,7 @@ const Header = observer(() => {
               <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#606F7A" stroke-width="1.5" />
             </svg>
             &nbsp;
-            <span>{to}</span>,
-            &nbsp;
+            <span>{to}</span>, &nbsp;
             <span>{currency}</span>
           </StyledP>
         )}

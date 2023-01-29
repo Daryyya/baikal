@@ -47,7 +47,7 @@ const Cart = observer(() => {
       </ButtonsWrapper>
       {!!order.length && isCounted && (
         <>
-        <MobileHeaderContent onClick={() => setIsCounted(false)}/>
+          <MobileHeaderContent onClick={() => setIsCounted(false)} />
           <MobilePopup>
             <MobileCartSum />
           </MobilePopup>

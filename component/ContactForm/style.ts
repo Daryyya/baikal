@@ -88,8 +88,8 @@ export const StyledP = styled.p`
   }
   ${downXl} {
     &:first-of-type {
-    display: block;
-  }
+      display: block;
+    }
   }
 `;
 
@@ -98,7 +98,7 @@ export const SubmitButton = styled(Button)`
   margin-bottom: 20px;
   border-radius: 5px;
   ${downXl} {
-   width: 100%;
+    width: 100%;
   }
   ${downXs} {
     max-width: 300px;
@@ -112,7 +112,7 @@ export const AgreementP = styled.p`
   letter-spacing: 0.2px;
   color: var(--light-grey);
   ${downXl} {
-   font-size: 16px;
+    font-size: 16px;
   }
 `;
 

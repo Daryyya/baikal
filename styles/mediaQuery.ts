@@ -17,4 +17,3 @@ export const downXl = `@media (max-width: ${xl}px)`;
 export const upXl = `@media (min-width: ${xl}px)`;
 export const downXxl = `@media (max-width: ${xxl}px)`;
 export const upXxl = `@media (min-width: ${xxl}px)`;
-

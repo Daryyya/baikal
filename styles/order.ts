@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import Link from '../kit/Link';
 import { downXl, downXxl, upXl } from './mediaQuery';
 
-
 export const Container = styled.div`
   max-width: 1440px;
   min-height: calc(100vh - var(--header-height));
