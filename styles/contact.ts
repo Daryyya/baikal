@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import ContactForm from '../component/ContactForm';
 import Button from '../kit/Button';
+import MobilePopup from '../component/MobilePopup';
+import MobileHeaderContent from '../component/MobileHeaderContent';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -134,5 +136,17 @@ export const StyledMobileButton = styled(Button)`
   @media (max-width: 1200px) {
     display: block;
     margin: 0 auto 30px;
+  }
+`;
+
+export const StyledMobilePopup = styled(MobilePopup)`
+  background-color: var(--white);
+`;
+
+export const StyledMobileHeaderContent = styled(MobileHeaderContent)`
+  background-color: var(--white);
+  @media (max-width: 1200px) {
+    width: 100vw;
+    left: 0 !important;
   }
 `;

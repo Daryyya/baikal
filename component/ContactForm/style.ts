@@ -4,6 +4,12 @@ import Input from '../../kit/Input';
 
 export const StyledForm = styled.form`
   padding-top: 134px;
+
+  @media (max-width: 1200px) {
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: var(--white);
+  }
 `;
 
 export const StyledInput = styled(Input)`
@@ -26,6 +32,9 @@ export const Textarea = styled.textarea`
   height: 124px;
   padding: 10px;
   border-radius: 3px;
+  @media (max-width: 1200px) {
+    width: 375px;
+  }
 `;
 
 export const TextareaName = styled.p`

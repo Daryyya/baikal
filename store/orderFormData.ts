@@ -18,6 +18,8 @@ class OrderFormData {
 
   private checkedItem: Item | undefined = undefined;
 
+  private isContactFormOpen = false;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -37,6 +39,14 @@ class OrderFormData {
 
   public getState() {
     return this.order;
+  }
+
+  public getIsContactFormOpen() {
+    return this.isContactFormOpen;
+  }
+
+  public setIsContactFormOpen = (isOpen: boolean) => {
+    this.isContactFormOpen = isOpen;
   }
 
   public setCheckedItem(item?: Item) {

@@ -7,7 +7,7 @@ export const Component = styled.div`
   top: 0;
   z-index: 12;
   background-color: var(--semilight-blue);
-  height: 63px;
+  height: 65px;
 
   @media (max-width: 1200px) {
     display: flex;

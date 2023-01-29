@@ -1,9 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
+import { useRouter } from 'next/router';
+import { observer } from 'mobx-react';
 import inst from '../../public/img/instagram.png';
 import fb from '../../public/img/facebook.png';
 import whats from '../../public/img/whatsapp.png';
 import weChat from '../../public/img/weChat.png';
+import { myOrderFormData } from '../../store/orderFormData';
+import ContactForm from '../../component/ContactForm';
 import {
   Wrapper,
   ContactColumn,
@@ -14,10 +18,14 @@ import {
   StyledPLink,
   DesktopContactForm,
   StyledMobileButton,
+  StyledMobilePopup,
+  StyledMobileHeaderContent,
 } from '../../styles/contact';
-// import ContactForm from '../../component/ContactForm';
 
-const Contact = () => {
+const Contact = observer(() => {
+  const { back } = useRouter()
+  const isContactFormOpen = myOrderFormData.getIsContactFormOpen();
+
   return (
     <Wrapper>
       <ContactColumn>
@@ -29,7 +37,7 @@ const Contact = () => {
         <StyledPLink>
           <span>Телефон:</span> <a href="tel:8 800 201-87-77">8 800 201-87-77</a>
         </StyledPLink>
-        <StyledMobileButton type="button" variant="white">
+        <StyledMobileButton type="button" variant="white" onClick={() => myOrderFormData.setIsContactFormOpen(true)}>
           Связаться
         </StyledMobileButton>
         <StyledH2>Мы в соц. сетях:</StyledH2>
@@ -46,7 +54,6 @@ const Contact = () => {
             <Image src={whats} alt="whatsapp" width={50} height={50} />
             <span>Whatsapp</span>
           </StyledP>
-
           <StyledP>
             <Image src={weChat} alt="weChat" width={50} height={50} />
             <span>WeChat</span>
@@ -54,8 +61,16 @@ const Contact = () => {
         </Social>
       </ContactColumn>
       <DesktopContactForm />
+      {isContactFormOpen && (
+        <>
+          <StyledMobileHeaderContent onClick={back} />
+          <StyledMobilePopup>
+          <ContactForm />
+        </StyledMobilePopup>
+        </>
+      )}
     </Wrapper>
   );
-};
+});
 
 export default Contact;

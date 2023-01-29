@@ -10,7 +10,7 @@ import { myDirectionFormData } from '../../store/directionFormData';
 import { StyledHeader, Container, DesktopStyledLink, BurgerMenu, StyledP } from './style';
 
 const Header = observer(() => {
-  const router = useRouter();
+  const {route} = useRouter();
   const direction = myDirectionFormData.getState();
   const { currency, from, to } = direction;
 
@@ -20,21 +20,24 @@ const Header = observer(() => {
         <NextLink href="/">
           <Image src={logo} alt="logo" width={163} height={40} />
         </NextLink>
-        {from && (
+        {from && to && route !== '/' && route !== '/contact' && (
           <StyledP>
-            <span>{from}</span>&nbsp;
+            <span>{from}</span>
+            &nbsp;
             <svg width="15" height="6" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#606F7A" stroke-width="1.5" />
             </svg>
             &nbsp;
-            <span>{to}</span>,&nbsp;<span>{currency}</span>
+            <span>{to}</span>,
+            &nbsp;
+            <span>{currency}</span>
           </StyledP>
         )}
-        <DesktopStyledLink href="/contact" variant="white">
-          Связаться
+        <DesktopStyledLink href={route === '/contact' ? '/' : '/contact'} variant="white">
+          {route === '/contact' ? 'На главную' : 'Связаться'}
         </DesktopStyledLink>
-        <BurgerMenu href={router.route === '/contact' ? '/' : '/contact'}>
-          <Image src={router.route === '/contact' ? close : menu} width={22} height={22} alt="" />
+        <BurgerMenu href={route === '/contact' ? '/' : '/contact'}>
+          <Image src={route === '/contact' ? close : menu} width={22} height={22} alt="" />
         </BurgerMenu>
       </Container>
     </StyledHeader>

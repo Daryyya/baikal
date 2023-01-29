@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
-import Link from '../../kit/Link';
 
 export const StyledP = styled.p`
   color: var(--grey);
@@ -84,7 +83,7 @@ export const StyledSaveLink = styled(Button)`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledContactButton = styled(Button)`
   padding: 19px 50px;
   @media (max-width: 1200px) {
     padding: 19px 35px;

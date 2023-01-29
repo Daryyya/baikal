@@ -1,9 +1,11 @@
 import { observer } from 'mobx-react';
+import { useRouter } from 'next/router';
 import React, { HTMLAttributes, FC } from 'react';
 import { myOrderFormData } from '../../store/orderFormData';
-import { StyledP, BottomLinksWrapper, StyledSaveLink, Sum, StyledLink } from './style';
+import { StyledP, BottomLinksWrapper, StyledSaveLink, Sum, StyledContactButton } from './style';
 
 const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
+  const { push } = useRouter()
   const totalValue = myOrderFormData.getTotalValue();
   const deliveryCost = totalValue.totalVolume * 300;
   const customCost = totalValue.totalGrossWeight * 2.5;
@@ -28,9 +30,16 @@ const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
             <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#5daaff" strokeWidth="1.5" />
           </svg>
         </StyledSaveLink>
-        <StyledLink href="/contact" variant="blue">
+        <StyledContactButton
+          type='button'
+          variant="blue"
+          onClick={() => {
+            myOrderFormData.setIsContactFormOpen(true);
+            push('/contact');
+          }}
+        >
           Связаться по доставке
-        </StyledLink>
+        </StyledContactButton>
       </BottomLinksWrapper>
     </div>
   );
