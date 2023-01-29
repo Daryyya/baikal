@@ -16,6 +16,11 @@ export const StyledForm = styled.form`
   }
 `;
 
+export const StyledInput = styled(Input)`
+  font-family: 'Open Sans';
+  font-weight: 400;
+`;
+
 export const ItemWrapper = styled.div`
   background-color: #f8faff;
   display: flex;
@@ -72,8 +77,6 @@ export const StyledText = styled.p`
   color: var(--grey);
   margin-right: 35px;
 `;
-
-export const StyledInput = styled(Input)``;
 
 export const Buttons = styled.div`
   display: grid;
