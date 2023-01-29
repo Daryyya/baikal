@@ -15,6 +15,8 @@ import {
 } from '../../styles/cart';
 import sofa from '../../public/img/sofa.png';
 import MobileCartSum from '../../component/MobileCartSum';
+import MobilePopup from '../../component/MobilePopup';
+import MobileHeaderContent from '../../component/MobileHeaderContent';
 
 const Cart = observer(() => {
   const [isCounted, setIsCounted] = useState(false);
@@ -43,7 +45,14 @@ const Cart = observer(() => {
           </StyledButton>
         )}
       </ButtonsWrapper>
-      {!!order.length && isCounted && <MobileCartSum />}
+      {!!order.length && isCounted && (
+        <>
+        <MobileHeaderContent onClick={() => setIsCounted(false)}/>
+          <MobilePopup>
+            <MobileCartSum />
+          </MobilePopup>
+        </>
+      )}
       {!!order.length && isCounted && <StyledCartSum />}
     </Wrapper>
   );
