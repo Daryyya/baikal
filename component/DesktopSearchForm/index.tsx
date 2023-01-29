@@ -10,9 +10,8 @@ interface Props {
   setSearchValue: (newValue: string) => void;
 }
 
-const DesktopSerchForm: FC<Props> = ({ setSearchValue }) => {
+const DesktopSearchForm: FC<Props> = ({ setSearchValue }) => {
   const { handleSubmit, register } = useForm<Fields>();
-
   const onSubmit: SubmitHandler<Fields> = (data) => {
     setSearchValue(data.name);
   };
@@ -27,4 +26,4 @@ const DesktopSerchForm: FC<Props> = ({ setSearchValue }) => {
   );
 };
 
-export default DesktopSerchForm;
+export default DesktopSearchForm;

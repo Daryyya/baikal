@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 
 export const StyledTable = styled.table`
-  margin-top: 45px;
+  margin: 45px 0 40px;
   border-collapse: collapse;
   width: 100%;
   @media (max-width: 1200px) {

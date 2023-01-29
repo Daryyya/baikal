@@ -9,11 +9,7 @@ interface Props extends HTMLAttributes<HTMLAnchorElement> {
 }
 
 const Link: FC<Props> = ({ children, ...restProps }) => {
-  return (
-    <StyledLink {...restProps}>
-      {children}
-    </StyledLink>
-  );
+  return <StyledLink {...restProps}>{children}</StyledLink>;
 };
 
 export default Link;

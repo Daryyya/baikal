@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Label = styled.label`
   display: grid;
   gap: 15px;
-  height: 100%;
+  height: auto;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 15px;

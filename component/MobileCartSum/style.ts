@@ -1,23 +1,21 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  position: fixed;
-  top: 64px;
-  /* left: 0; */
-  width: 100%;
-  height: calc(100vh - 64px);
   background-color: var(--semilight-blue);
-  max-width: 375px;
+  max-width: 435px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px 50px 0;
   @media (min-width: 1200px) {
     display: none;
+  }
+  @media (max-width: 576px) {
+    padding: 30px 20px 0;
   }
 `;
 
 export const DirectionP = styled.p`
   margin-bottom: 42px;
-  font-size: 17;
+  font-size: 17px;
   line-height: 1;
   letter-spacing: 0.2px;
   font-weight: 600;

@@ -47,3 +47,15 @@ export const Container = styled.div`
     padding: 20px 21px 0;
   }
 `;
+
+export const StyledP = styled.p`
+  font-size: 17;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  color: var(--grey);
+  & svg {
+    position: relative;
+    bottom: 2px;
+  }
+`;

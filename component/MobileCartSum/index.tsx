@@ -12,14 +12,16 @@ const MobileCartSum = observer(() => {
   const { totalCost, totalGrossWeight, totalNetWeight, totalVolume } = totlaValue;
   return (
     <Wrapper>
-      <DirectionP>
-        <span>{from}</span>&nbsp;
-        <svg width="15" height="6" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#606F7A" stroke-width="1.5" />
-        </svg>
-        &nbsp;
-        <span>{to}</span>,&nbsp;<span>{currency}</span>
-      </DirectionP>
+      {from && to && (
+        <DirectionP>
+          <span>{from}</span>&nbsp;
+          <svg width="15" height="6" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#606F7A" stroke-width="1.5" />
+          </svg>
+          &nbsp;
+          <span>{to}</span>,&nbsp;<span>{currency}</span>
+        </DirectionP>
+      )}
       <StyledP>
         <span>Общая масса нетто, кг:</span>
         <span>{totalNetWeight}</span>

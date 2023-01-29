@@ -18,6 +18,8 @@ class OrderFormData {
 
   private checkedItem: Item | undefined = undefined;
 
+  private isContactFormOpen = false;
+
   constructor() {
     makeAutoObservable(this);
   }
@@ -39,9 +41,21 @@ class OrderFormData {
     return this.order;
   }
 
+  public getIsContactFormOpen() {
+    return this.isContactFormOpen;
+  }
+
+  public setIsContactFormOpen = (isOpen: boolean) => {
+    this.isContactFormOpen = isOpen;
+  }
+
   public setCheckedItem(item?: Item) {
     this.checkedItem = item;
   }
+
+  public removeCheckedItem = () => {
+    this.checkedItem = undefined;
+  };
 
   public getCheckedItem() {
     return this.checkedItem;
@@ -49,7 +63,7 @@ class OrderFormData {
 
   public reset = () => {
     this.order = [];
-  }
+  };
 
   public getTotalValue() {
     return this.order.reduce(
@@ -67,7 +81,7 @@ class OrderFormData {
         totalVolume: 0,
         totalCost: 0,
       }
-    )
+    );
   }
 }
 

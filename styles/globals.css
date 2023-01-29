@@ -1,22 +1,22 @@
 @font-face {
-  font-family: 'Open Sans', sans-serif;
-  src: url('../public/fonts/OpenSans-Regular.woff'), url('../public/fonts/OpenSans-Regular.woff2');
+  font-family: 'Open Sans';
+  src: url('../public/fonts/OpenSans-Regular.woff2'), url('../public/fonts/OpenSans-Regular.woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans', sans-serif;
-  src: url('../public/fonts/OpenSans-SemiBold.woff'), url('../public/fonts/OpenSans-SemiBold.woff2');
+  font-family: 'Open Sans';
+  src: url('../public/fonts/OpenSans-SemiBold.woff2'), url('../public/fonts/OpenSans-SemiBold.woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto', sans-serif;
-  src: url('../public/fonts/Roboto-Medium.woff'), url('../public/fonts/Roboto-Medium.woff2');
+  font-family: 'Roboto';
+  src: url('../public/fonts/Roboto-Medium.woff2'), url('../public/fonts/Roboto-Medium.woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
