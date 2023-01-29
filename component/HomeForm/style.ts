@@ -8,6 +8,7 @@ export const StyledForm = styled.form`
   flex-wrap: wrap;
   align-items: flex-end;
   width: fit-content;
+  padding-bottom: 210px;
   @media (max-width: 1200px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
