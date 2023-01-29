@@ -38,6 +38,8 @@ export const ItemName = styled.p`
 `;
 
 export const StyledButton = styled(Button)`
+  font-family: 'Roboto';
+  font-weight: 500;
   min-width: 137px;
   padding: 14px 30px;
 

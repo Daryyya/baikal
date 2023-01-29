@@ -18,6 +18,8 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledButton = styled(Button)`
+  font-family: 'Roboto';
+  font-weight: 500;
   height: 67px;
   margin-left: 12px;
   ${downXl} {

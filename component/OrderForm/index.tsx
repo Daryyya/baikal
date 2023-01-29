@@ -5,7 +5,6 @@ import { observer } from 'mobx-react';
 import Link from 'next/link';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 import { myOrderFormData, OrderFormFields } from '../../store/orderFormData';
-import Input from '../../kit/Input';
 import {
   StyledForm,
   ItemWrapper,
@@ -19,6 +18,7 @@ import {
   Buttons,
   StyledButton,
   CartLinkText,
+  StyledInput,
 } from './style';
 
 interface FormFields extends OrderFormFields {
@@ -101,10 +101,10 @@ const OrderForm: FC = observer(() => {
           </button>
         </ButtonWrapper>
       </AmountWrapper>
-      <Input placeholder="Объём, м3" {...register('volume', { required: true })} />
-      <Input placeholder="Общая масса нетто, кг" {...register('netWeight', { required: true })} />
-      <Input placeholder="Общая масса брутто, кг" {...register('grossWeight')} />
-      <Input placeholder="Стоимость одной единицы" {...register('cost', { required: true })} />
+      <StyledInput placeholder="Объём, м3" {...register('volume', { required: true })} />
+      <StyledInput placeholder="Общая масса нетто, кг" {...register('netWeight', { required: true })} />
+      <StyledInput placeholder="Общая масса брутто, кг" {...register('grossWeight')} />
+      <StyledInput placeholder="Стоимость одной единицы" {...register('cost', { required: true })} />
       <Buttons>
         <StyledButton type="reset" variant="blue" onClick={() => reset()}>
           Сбросить

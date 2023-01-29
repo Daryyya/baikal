@@ -17,6 +17,10 @@ export const StyledInput = styled(Input)`
   font-size: 15px;
   line-height: 1;
   margin-right: 8px;
+  &::placeholder {
+    font-family: "Open Sans";
+    font-weight: 400;
+  }
 `;
 
 export const StyledButton = styled(Button)`
