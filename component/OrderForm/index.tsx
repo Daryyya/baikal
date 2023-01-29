@@ -1,10 +1,10 @@
 import React, { FC, useEffect } from 'react';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { observer } from 'mobx-react';
 import Link from 'next/link';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
-import { myOrderFormData, OrderFormFields } from '../../store/orderFormData';
+import { myOrderFormData } from '../../store/orderFormData';
+import NumberInput from './NumberInput';
+import { FormFields } from './types';
 import {
   StyledForm,
   ItemWrapper,
@@ -18,23 +18,7 @@ import {
   Buttons,
   StyledButton,
   CartLinkText,
-  StyledInput,
 } from './style';
-
-interface FormFields extends OrderFormFields {
-  amount: number;
-}
-
-const schema: yup.SchemaOf<FormFields> = yup.object().shape({
-  amount: yup.number().required('1'),
-  volume: yup.number().positive('looser!').required('2'),
-  netWeight: yup
-    .number()
-    .test('', 'Введите число', (v) => !!v && !Number.isNaN(v))
-    .required('3'),
-  grossWeight: yup.number().required('4'),
-  cost: yup.number().required('5'),
-});
 
 const OrderForm: FC = observer(() => {
   const order = myOrderFormData.getState();
@@ -45,8 +29,8 @@ const OrderForm: FC = observer(() => {
       ...checkedItem,
       amount: checkedItem?.amount || 1,
     },
-    resolver: yupResolver(schema),
   });
+  const { volume: volumeErr, cost: costErr, grossWeight: gwErr, netWeight: nwErr } = formState.errors;
 
   useEffect(reset, [checkedItem]);
   const { amount } = useWatch({ control });
@@ -65,17 +49,13 @@ const OrderForm: FC = observer(() => {
   }
 
   const onSubmit: SubmitHandler<FormFields> = (data) => {
-    console.log(data);
-
-    // if (checkedItem?.key) {
-    //   myOrderFormData.editItem({ ...checkedItem, ...data }, checkedItem.key);
-    // } else {
-    //   myOrderFormData.addItem({ ...checkedItem, ...data }, Date.now());
-    // }
-    // myOrderFormData.removeCheckedItem();
+    if (checkedItem?.key) {
+      myOrderFormData.editItem({ ...checkedItem, ...data }, checkedItem.key);
+    } else {
+      myOrderFormData.addItem({ ...checkedItem, ...data }, Date.now());
+    }
+    myOrderFormData.removeCheckedItem();
   };
-
-  console.log(formState.errors);
 
   const { name, image } = checkedItem;
   return (
@@ -92,7 +72,7 @@ const OrderForm: FC = observer(() => {
               <path d="M0 1L15 1" stroke="#5DAAFF" />
             </StyledMinus>
           </button>
-          <AmountInput defaultValue="1" {...register('amount', { required: true, min: 1 })} />
+          <AmountInput defaultValue={1} {...register('amount', { required: true, min: 1, valueAsNumber: true })} />
           <button onClick={() => setValue('amount', (amount || 0) + 1)} type="button">
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7.5 0V15" stroke="#5DAAFF" />
@@ -101,10 +81,10 @@ const OrderForm: FC = observer(() => {
           </button>
         </ButtonWrapper>
       </AmountWrapper>
-      <StyledInput placeholder="Объём, м3" {...register('volume', { required: true })} />
-      <StyledInput placeholder="Общая масса нетто, кг" {...register('netWeight', { required: true })} />
-      <StyledInput placeholder="Общая масса брутто, кг" {...register('grossWeight')} />
-      <StyledInput placeholder="Стоимость одной единицы" {...register('cost', { required: true })} />
+      <NumberInput placeholder="Объём, м3" register={register} fKey="volume" err={volumeErr} />
+      <NumberInput placeholder="Общая масса нетто, кг" register={register} fKey="netWeight" err={nwErr} />
+      <NumberInput placeholder="Общая масса брутто, кг" register={register} fKey="grossWeight" err={gwErr} />
+      <NumberInput placeholder="Стоимость одной единицы" register={register} fKey="cost" err={costErr} />
       <Buttons>
         <StyledButton type="reset" variant="blue" onClick={() => reset()}>
           Сбросить
