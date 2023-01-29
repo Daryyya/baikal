@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { myOrderFormData } from '../../store/orderFormData';
+import CellContent from './CellContent';
 import {
   StyledTable,
   StyledThead,
@@ -50,19 +51,19 @@ const Table = observer(() => {
                 </StyledCellContent>
               </StyledCell>
               <StyledCell>
-                <StyledCellContent>{amount}</StyledCellContent>
+                <CellContent content={amount || 0} />
               </StyledCell>
               <StyledCell>
-                <StyledCellContent>{netWeight}</StyledCellContent>
+                <CellContent content={netWeight || 0} />
               </StyledCell>
               <StyledCell>
-                <StyledCellContent>{grossWeight}</StyledCellContent>
+                <CellContent content={grossWeight || 0} />
               </StyledCell>
               <StyledCell>
-                <StyledCellContent>{volume}</StyledCellContent>
+                <CellContent content={volume || 0} />
               </StyledCell>
               <StyledCell>
-                <StyledCellContent>{cost}</StyledCellContent>
+                <CellContent content={cost || 0} />
               </StyledCell>
               <StyledCell>
                 <StyledCellContent>

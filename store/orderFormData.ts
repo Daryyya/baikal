@@ -5,7 +5,7 @@ export interface Item {
   id: number;
   name: string;
   image: StaticImageData;
-  amount?: string;
+  amount?: number;
   volume?: number;
   netWeight?: number;
   grossWeight?: number;
