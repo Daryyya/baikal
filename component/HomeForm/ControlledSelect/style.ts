@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Select from '../../../kit/Select';
+import { upXl } from '../../../styles/mediaQuery';
 
 interface Props {
   firstChild?: boolean;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const firstStyle = css`
-  @media (min-width: 1200px) {
+  ${upXl} {
     .react-select__control {
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
@@ -17,7 +18,7 @@ const firstStyle = css`
 `;
 
 export const StyledSelect = styled(Select)<Props>`
-  @media (min-width: 1200px) {
+  ${upXl} {
     .react-select__control {
       border-radius: 0;
       position: relative;

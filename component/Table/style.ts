@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { downXl } from '../../styles/mediaQuery';
+
 
 export const StyledTable = styled.table`
   margin: 45px 0 40px;
   border-collapse: collapse;
   width: 100%;
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;

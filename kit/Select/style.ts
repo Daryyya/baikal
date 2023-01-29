@@ -1,5 +1,6 @@
 import Select from 'react-select';
 import styled from '@emotion/styled';
+import { downXl, downXs } from '../../styles/mediaQuery';
 
 export const Wrapper = styled.div`
   font-family: 'Roboto', sans-serif;
@@ -15,7 +16,7 @@ export const Label = styled.label`
   display: block;
   margin-bottom: 15px;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     margin: 0 0 15px;
   }
 `;
@@ -26,11 +27,11 @@ export const StyledSelect = styled(Select)`
     min-width: 174px;
     border: none;
 
-    @media (max-width: 1200px) {
+    ${downXl} {
       padding: 14px 17px;
       min-width: 162px;
     }
-    @media (max-width: 375px) {
+    ${downXs} {
       min-width: 138px;
     }
   }
@@ -43,7 +44,7 @@ export const StyledSelect = styled(Select)`
     padding-left: 0;
     min-height: 36px;
 
-    @media (max-width: 1200px) {
+    ${downXl} {
       min-height: 16px;
     }
   }
@@ -54,7 +55,7 @@ export const StyledSelect = styled(Select)`
     color: var(--grey);
   }
   .react-select__dropdown-indicator {
-    @media (max-width: 1200px) {
+    ${downXl} {
       padding: 3px;
     }
   }
@@ -69,7 +70,7 @@ export const StyledSelect = styled(Select)`
     min-width: 144px;
     border: 1px solid var(--ebeb-grey);
 
-    @media (max-width: 375px) {
+    ${downXs} {
       min-width: 130px;
     }
   }

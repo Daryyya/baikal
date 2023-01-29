@@ -1,14 +1,15 @@
 import styled from '@emotion/styled';
+import { downSm, upXl } from '../../styles/mediaQuery';
 
 export const Wrapper = styled.div`
   background-color: var(--semilight-blue);
   max-width: 435px;
   margin: 0 auto;
   padding: 40px 50px 0;
-  @media (min-width: 1200px) {
+  ${upXl} {
     display: none;
   }
-  @media (max-width: 576px) {
+  ${downSm} {
     padding: 30px 20px 0;
   }
 `;

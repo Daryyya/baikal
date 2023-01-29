@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { downXl } from '../../../styles/mediaQuery';
 
 export const Wrapper = styled.div`
   display: none;
-  @media (max-width: 1200.1px) {
+  ${downXl} {
     display: block;
     background-color: var(--white);
     padding: 20px;

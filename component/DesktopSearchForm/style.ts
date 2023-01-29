@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
 import Input from '../../kit/Input';
+import { downXl } from '../../styles/mediaQuery';
 
 export const StyledForm = styled.form`
   display: flex;
   margin-bottom: 58px;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;

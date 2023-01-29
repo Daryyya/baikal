@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Input from '../../kit/Input';
+import { downXl, downXs } from '../../styles/mediaQuery';
 
 export const Form = styled.form`
   flex: 1 1 100%;
@@ -16,11 +17,11 @@ export const StyledInput = styled(Input)`
   border-bottom: 1.5px solid var(--light-grey);
   border-radius: 0;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     padding: 7px 2px;
     height: auto;
   }
-  @media (max-width: 375px) {
+  ${downXs} {
     min-width: 180px;
   }
 `;

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
 import Tooltip from './Tooltip';
+import { downXl, upXl } from '../../styles/mediaQuery';
 
 export const StyledForm = styled.form`
   position: relative;
@@ -9,7 +10,7 @@ export const StyledForm = styled.form`
   align-items: flex-end;
   width: fit-content;
   padding-bottom: 210px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 10px;
@@ -19,7 +20,7 @@ export const StyledForm = styled.form`
 export const StyledButton = styled(Button)`
   height: 67px;
   margin-left: 12px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     grid-column: 1 / 3;
     display: block;
     margin: 4px auto 0;
@@ -31,13 +32,13 @@ export const StyledButton = styled(Button)`
 `;
 
 export const DesktopButtonContent = styled.span`
-  @media (max-width: 1200.2px) {
+  ${downXl} {
     display: none;
   }
 `;
 
 export const MobileButtonContent = styled.span`
-  @media (min-width: 1200.1px) {
+  ${upXl} {
     display: none;
   }
 `;
@@ -45,7 +46,7 @@ export const MobileButtonContent = styled.span`
 export const StyledTooltipOne = styled(Tooltip)`
   top: 110px;
 
-  @media (max-width: 1200.2px) {
+  ${downXl} {
     display: none;
   }
 `;
@@ -60,7 +61,7 @@ export const StyledTooltipTwo = styled(Tooltip)`
   right: 0;
   top: -50px;
 
-  @media (max-width: 1200.2px) {
+  ${downXl} {
     display: none;
   }
 `;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { downXl } from '../../styles/mediaQuery';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -7,7 +8,7 @@ export const Wrapper = styled.div`
   max-height: 403px;
   overflow-y: scroll;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     max-height: calc(100vh - 150px);
     overflow-y: auto;
   }

@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
+import { downXl } from '../styles/mediaQuery';
 
 export const Main = styled.main`
   min-height: 100vh;
   background-color: var(--semilight-blue);
   padding-top: var(--header-height);
-  @media (max-width: 1200px) {
+  ${downXl} {
     padding-top: 64px;
   }
 `;

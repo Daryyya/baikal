@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { upXl } from '../../styles/mediaQuery';
 
 export const Popup = styled.div`
   position: fixed;
@@ -9,7 +10,7 @@ export const Popup = styled.div`
   overflow-y: auto;
   z-index: 1;
 
-  @media (min-width: 1200px) {
+  ${upXl} {
     display: none;
   }
 `;
