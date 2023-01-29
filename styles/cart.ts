@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Button from '../kit/Button';
 import Link from '../kit/Link';
 import CartSum from '../component/CartSum';
+import { downXl } from './mediaQuery';
 
 export const Wrapper = styled.div`
   min-height: calc(100vh - var(--header-height));
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 97px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     min-height: calc(100vh - 64px);
     max-width: 375px;
     padding: 0;
@@ -29,7 +30,7 @@ export const Title = styled.h1`
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
-  @media (max-width: 1200px) {
+  ${downXl} {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.2px;
@@ -48,7 +49,7 @@ export const ButtonsWrapper = styled.div`
 
 export const StyledButton = styled(Button)`
   padding: 19px 50px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     padding: 19px 35px;
     flex: 1 0 calc(50% - 6px);
   }
@@ -56,14 +57,14 @@ export const StyledButton = styled(Button)`
 
 export const StyledLink = styled(Link)`
   padding: 19px 50px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     padding: 19px 35px;
     flex: 1 0 calc(50% - 6px);
   }
 `;
 
 export const StyledCartSum = styled(CartSum)`
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;

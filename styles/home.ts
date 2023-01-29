@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { downXl, downMd } from './mediaQuery';
 
 export const Wrapper = styled.div`
   position: relative;
   min-height: calc(100vh - var(--header-height));
-  @media (max-width: 1200px) {
+  ${downXl} {
     min-height: calc(100vh - 64px);
   }
 `;
@@ -14,7 +15,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 110px 97px 0;
   position: relative;
-  @media (max-width: 1200px) {
+  ${downXl} {
     max-width: 375px;
     padding: 35px 21px 0;
   }
@@ -24,7 +25,7 @@ export const BackgroundImage = styled(Image)`
   object-fit: contain;
   object-position: right bottom;
   pointer-events: none;
-  @media (max-width: 768px) {
+  ${downMd} {
     display: none;
   }
 `;
@@ -35,7 +36,7 @@ export const Title = styled.h1`
   letter-spacing: -1px;
   color: var(--grey);
   margin-bottom: 48px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     font-weight: 300;
     font-size: 31px;
     line-height: 40px;

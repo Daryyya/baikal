@@ -1,15 +1,18 @@
 import { makeAutoObservable } from 'mobx';
 import { StaticImageData } from 'next/image';
 
-export interface Item {
-  id: number;
-  name: string;
-  image: StaticImageData;
+export interface OrderFormFields {
   amount?: number;
   volume?: number;
   netWeight?: number;
   grossWeight?: number;
   cost?: number;
+}
+
+export interface Item extends OrderFormFields {
+  id: number;
+  name: string;
+  image: StaticImageData;
   key?: number;
 }
 
@@ -42,12 +45,12 @@ class OrderFormData {
   }
 
   public editItemInOrder = (newItem: Item) => {
-    const target = this.order.findIndex(itm => itm.key === newItem.key);
+    const target = this.order.findIndex((itm) => itm.key === newItem.key);
 
     if (typeof target !== undefined) {
       this.order[target] = newItem;
     }
-  }
+  };
 
   public getIsContactFormOpen() {
     return this.isContactFormOpen;
@@ -55,7 +58,7 @@ class OrderFormData {
 
   public setIsContactFormOpen = (isOpen: boolean) => {
     this.isContactFormOpen = isOpen;
-  }
+  };
 
   public setCheckedItem(item?: Item) {
     this.checkedItem = item;

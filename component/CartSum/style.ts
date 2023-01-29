@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
+import { downXl } from '../../styles/mediaQuery';
 
 export const StyledP = styled.p`
   color: var(--grey);
@@ -17,7 +18,7 @@ export const StyledP = styled.p`
     display: inline-block;
     min-width: 210px;
   }
-  @media (max-width: 1200px) {
+  ${downXl} {
     font-size: 17px;
     margin-bottom: 24px;
     display: flex;
@@ -40,7 +41,7 @@ export const Sum = styled.p`
     display: inline-block;
     min-width: 210px;
   }
-  @media (max-width: 1200px) {
+  ${downXl} {
     font-size: 23px;
     margin: 54px 0 24px;
     display: flex;
@@ -60,7 +61,7 @@ export const BottomLinksWrapper = styled.div`
   grid-template-columns: 233px 299px;
   padding-bottom: 48px;
   margin-bottom: 0;
-  @media (max-width: 1200px) {
+  ${downXl} {
     grid-template-columns: 1fr;
     gap: 8px;
   }
@@ -77,7 +78,7 @@ export const StyledSaveLink = styled(Button)`
     left: 8px;
     top: 1px;
   }
-  @media (max-width: 1200px) {
+  ${downXl} {
     justify-content: center;
     order: 2;
   }
@@ -85,7 +86,7 @@ export const StyledSaveLink = styled(Button)`
 
 export const StyledContactButton = styled(Button)`
   padding: 19px 50px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     padding: 19px 35px;
     flex: 1 0 calc(50% - 6px);
   }

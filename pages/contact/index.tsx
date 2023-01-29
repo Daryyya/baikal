@@ -27,8 +27,8 @@ const Contact = observer(() => {
   useEffect(() => {
     return () => {
       myOrderFormData.setIsContactFormOpen(false);
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <Wrapper>
@@ -69,8 +69,8 @@ const Contact = observer(() => {
         <>
           <StyledMobileHeaderContent onClick={() => myOrderFormData.setIsContactFormOpen(false)} />
           <StyledMobilePopup>
-          <ContactForm />
-        </StyledMobilePopup>
+            <ContactForm />
+          </StyledMobilePopup>
         </>
       )}
     </Wrapper>

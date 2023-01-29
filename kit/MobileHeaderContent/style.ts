@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { downXl, downMd, downXs } from '../../styles/mediaQuery';
 
 export const Component = styled.div`
   position: fixed;
@@ -9,19 +10,19 @@ export const Component = styled.div`
   background-color: var(--semilight-blue);
   height: 65px;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: flex;
     left: 50%;
     transform: translateX(-50%);
     width: 375px;
     padding: 0 20px;
   }
-  @media (max-width: 768px) {
+  ${downMd} {
     left: 20px;
     transform: none;
     width: calc(100% - 79px);
   }
-  @media (max-width: 375px) {
+  ${downXs} {
     padding: 0;
   }
 `;

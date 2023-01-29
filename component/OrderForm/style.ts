@@ -2,13 +2,14 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import Button from '../../kit/Button';
 import Input from '../../kit/Input';
+import { downXl } from '../../styles/mediaQuery';
 
 export const StyledForm = styled.form`
   background-color: var(--semilight-blue);
   display: grid;
   gap: 15px;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     max-width: 375px;
     padding: 0 21px 30px;
     margin: 0 auto;
@@ -24,7 +25,7 @@ export const ItemWrapper = styled.div`
 
 export const StyledImage = styled(Image)`
   height: 70px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     width: 140px;
     height: 88px;
   }
@@ -35,7 +36,7 @@ export const ItemName = styled.p`
   font-size: 17px;
   letter-spacing: -1px;
   color: var(--grey);
-  @media (max-width: 1200px) {
+  ${downXl} {
     margin: 0 25px;
   }
 `;
@@ -72,15 +73,13 @@ export const StyledText = styled.p`
   margin-right: 35px;
 `;
 
-export const StyledInput = styled(Input)``;
-
 export const Buttons = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 9px;
   margin-top: 25px;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     grid-template-columns: 1fr;
   }
 `;

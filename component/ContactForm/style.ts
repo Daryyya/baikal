@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
 import Input from '../../kit/Input';
+import { downXl, downXs } from '../../styles/mediaQuery';
 
 export const StyledForm = styled.form`
   padding-top: 134px;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     max-width: 375px;
     margin: 0 auto;
     background-color: var(--white);
@@ -15,7 +16,7 @@ export const StyledForm = styled.form`
 
 export const MobileTitle = styled.h1`
   display: none;
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: block;
     font-weight: 600;
     font-size: 24px;
@@ -29,12 +30,12 @@ export const MobileTitle = styled.h1`
 export const StyledInput = styled(Input)`
   height: 53px;
   width: 246px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     border: 1px solid var(--light-grey);
     border-radius: 3px;
     width: 335px;
   }
-  @media (max-width: 375px) {
+  ${downXs} {
     width: 300px;
   }
 
@@ -52,7 +53,7 @@ export const InputWrap = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 48px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     margin-bottom: 24px;
   }
 `;
@@ -66,12 +67,12 @@ export const Textarea = styled.textarea`
   height: 124px;
   padding: 10px;
   border-radius: 3px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     max-width: 335px;
     border: 1px solid var(--light-grey);
     border-radius: 3px;
   }
-  @media (max-width: 375px) {
+  ${downXs} {
     max-width: 300px;
   }
 `;
@@ -85,10 +86,10 @@ export const StyledP = styled.p`
   &:first-of-type {
     display: none;
   }
-  @media (max-width: 1200px) {
+  ${downXl} {
     &:first-of-type {
-    display: block;
-  }
+      display: block;
+    }
   }
 `;
 
@@ -96,10 +97,10 @@ export const SubmitButton = styled(Button)`
   padding: 19px 31px;
   margin-bottom: 20px;
   border-radius: 5px;
-  @media (max-width: 1200px) {
-   width: 100%;
+  ${downXl} {
+    width: 100%;
   }
-  @media (max-width: 375px) {
+  ${downXs} {
     max-width: 300px;
   }
 `;
@@ -110,8 +111,8 @@ export const AgreementP = styled.p`
   line-height: 25px;
   letter-spacing: 0.2px;
   color: var(--light-grey);
-  @media (max-width: 1200px) {
-   font-size: 16px;
+  ${downXl} {
+    font-size: 16px;
   }
 `;
 

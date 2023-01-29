@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import ContactForm from '../component/ContactForm';
 import Button from '../kit/Button';
-import MobilePopup from '../component/MobilePopup';
-import MobileHeaderContent from '../component/MobileHeaderContent';
+import MobilePopup from '../kit/MobilePopup';
+import MobileHeaderContent from '../kit/MobileHeaderContent';
+import { downXl } from './mediaQuery';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -12,7 +13,7 @@ export const Wrapper = styled.div`
   padding: 0 97px;
   margin: 0 auto;
   height: calc(100% - 137px);
-  @media (max-width: 1200px) {
+  ${downXl} {
     max-width: 375px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
@@ -22,7 +23,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ContactColumn = styled.div`
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +37,7 @@ export const Title = styled.h1`
   font-weight: 400;
   color: var(--grey);
   margin-bottom: 70px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;
@@ -47,7 +48,7 @@ export const StyledH2 = styled.h2`
   line-height: 1;
   letter-spacing: -1px;
   color: var(--grey);
-  @media (max-width: 1200px) {
+  ${downXl} {
     &:not(:last-of-type) {
       display: none;
     }
@@ -64,7 +65,7 @@ export const Social = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 70px 50px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     grid-template-columns: repeat(4, 50px);
     grid-template-rows: none;
     gap: 15px;
@@ -81,7 +82,7 @@ export const StyledP = styled.p`
   font-size: 23px;
   line-height: 1;
   letter-spacing: 0.2px;
-  @media (max-width: 1200px) {
+  ${downXl} {
     span {
       display: none;
     }
@@ -105,7 +106,7 @@ export const StyledPLink = styled.p`
   a {
     color: var(--grey);
   }
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: block;
     font-size: 28px;
     letter-spacing: -1px;
@@ -126,14 +127,14 @@ export const StyledPLink = styled.p`
 `;
 
 export const DesktopContactForm = styled(ContactForm)`
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;
 
 export const StyledMobileButton = styled(Button)`
   display: none;
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: block;
     margin: 0 auto 30px;
   }
@@ -145,7 +146,7 @@ export const StyledMobilePopup = styled(MobilePopup)`
 
 export const StyledMobileHeaderContent = styled(MobileHeaderContent)`
   background-color: var(--white);
-  @media (max-width: 1200px) {
+  ${downXl} {
     width: 100vw;
     left: 0 !important;
     transform: none;

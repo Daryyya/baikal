@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from '../kit/Link';
+import { downXl, downXxl, upXl } from './mediaQuery';
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -11,7 +12,7 @@ export const Container = styled.div`
   gap: 119px;
   justify-content: space-between;
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     min-height: calc(100vh - 64px);
     display: block;
     max-width: 375px;
@@ -20,7 +21,7 @@ export const Container = styled.div`
 `;
 
 export const RightColumn = styled.div`
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;
@@ -37,11 +38,11 @@ export const Title = styled.h2`
   font-size: 36px;
   margin-bottom: 42px;
 
-  @media (max-width: 1440px) {
+  ${downXxl} {
     font-size: 30px;
   }
 
-  @media (max-width: 1200px) {
+  ${downXl} {
     display: none;
   }
 `;
@@ -54,7 +55,7 @@ export const MobileCartLink = styled(Link)`
   padding: 16px 34px;
   z-index: 2;
 
-  @media (min-width: 1200px) {
+  ${upXl} {
     display: none;
   }
 `;
