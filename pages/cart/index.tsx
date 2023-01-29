@@ -15,8 +15,8 @@ import {
 } from '../../styles/cart';
 import sofa from '../../public/img/sofa.png';
 import MobileCartSum from '../../component/MobileCartSum';
-import MobilePopup from '../../component/MobilePopup';
-import MobileHeaderContent from '../../component/MobileHeaderContent';
+import MobilePopup from '../../kit/MobilePopup';
+import MobileHeaderContent from '../../kit/MobileHeaderContent';
 
 const Cart = observer(() => {
   const [isCounted, setIsCounted] = useState(false);

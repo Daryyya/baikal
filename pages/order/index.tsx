@@ -3,10 +3,10 @@ import { observer } from 'mobx-react';
 import { useRouter } from 'next/router';
 import DesktopSearchForm from '../../component/DesktopSearchForm';
 import MobileSearchForm from '../../component/MobileSearchForm';
-import MobileHeaderContent from '../../component/MobileHeaderContent';
+import MobileHeaderContent from '../../kit/MobileHeaderContent';
 import CardList from '../../component/CardList';
 import OrderForm from '../../component/OrderForm';
-import MobilePopup from '../../component/MobilePopup';
+import MobilePopup from '../../kit/MobilePopup';
 import { myOrderFormData } from '../../store/orderFormData';
 import { Container, RightColumn, LeftColumn, Title, MobileCartLink } from '../../styles/order';
 

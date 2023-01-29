@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import ContactForm from '../component/ContactForm';
 import Button from '../kit/Button';
-import MobilePopup from '../component/MobilePopup';
-import MobileHeaderContent from '../component/MobileHeaderContent';
+import MobilePopup from '../kit/MobilePopup';
+import MobileHeaderContent from '../kit/MobileHeaderContent';
 
 export const Wrapper = styled.div`
   display: grid;
