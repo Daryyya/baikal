@@ -41,6 +41,14 @@ class OrderFormData {
     return this.order;
   }
 
+  public editItemInOrder = (newItem: Item) => {
+    const target = this.order.findIndex(itm => itm.key === newItem.key);
+
+    if (typeof target !== undefined) {
+      this.order[target] = newItem;
+    }
+  }
+
   public getIsContactFormOpen() {
     return this.isContactFormOpen;
   }

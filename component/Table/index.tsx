@@ -51,19 +51,19 @@ const Table = observer(() => {
                 </StyledCellContent>
               </StyledCell>
               <StyledCell>
-                <CellContent content={amount || 0} />
+                <CellContent content={amount || 0} onChange={(val) => myOrderFormData.editItemInOrder({ ...item, amount: val })} />
               </StyledCell>
               <StyledCell>
-                <CellContent content={netWeight || 0} />
+                <CellContent content={netWeight || 0} onChange={(val) => myOrderFormData.editItemInOrder({ ...item, netWeight: val })}/>
               </StyledCell>
               <StyledCell>
-                <CellContent content={grossWeight || 0} />
+                <CellContent content={grossWeight || 0} onChange={(val) => myOrderFormData.editItemInOrder({ ...item, grossWeight: val })}/>
               </StyledCell>
               <StyledCell>
-                <CellContent content={volume || 0} />
+                <CellContent content={volume || 0} onChange={(val) => myOrderFormData.editItemInOrder({ ...item, volume: val })}/>
               </StyledCell>
               <StyledCell>
-                <CellContent content={cost || 0} />
+                <CellContent content={cost || 0} onChange={(val) => myOrderFormData.editItemInOrder({ ...item, cost: val })}/>
               </StyledCell>
               <StyledCell>
                 <StyledCellContent>
