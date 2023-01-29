@@ -8,6 +8,6 @@ interface InputProps {
 export const StyledInput = styled(Input)<InputProps>`
   font-family: 'Open Sans';
   font-weight: 400;
-  
-  outline: ${({withRedOutline}) => withRedOutline ? '1px solid red' : 'none'} !important;
+
+  outline: ${({ withRedOutline }) => (withRedOutline ? '1px solid red' : 'none')} !important;
 `;

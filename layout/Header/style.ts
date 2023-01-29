@@ -50,7 +50,7 @@ export const Container = styled.div`
 `;
 
 export const StyledP = styled.p`
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 17px;
   line-height: 1;

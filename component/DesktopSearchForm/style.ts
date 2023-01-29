@@ -18,7 +18,7 @@ export const StyledInput = styled(Input)`
   line-height: 1;
   margin-right: 8px;
   &::placeholder {
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-weight: 400;
   }
 `;
