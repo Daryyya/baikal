@@ -5,7 +5,7 @@ export interface Item {
   id: number;
   name: string;
   image: StaticImageData;
-  amount?: string;
+  amount?: number;
   volume?: number;
   netWeight?: number;
   grossWeight?: number;
@@ -39,6 +39,14 @@ class OrderFormData {
 
   public getState() {
     return this.order;
+  }
+
+  public editItemInOrder = (newItem: Item) => {
+    const target = this.order.findIndex(itm => itm.key === newItem.key);
+
+    if (typeof target !== undefined) {
+      this.order[target] = newItem;
+    }
   }
 
   public getIsContactFormOpen() {
