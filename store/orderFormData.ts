@@ -1,15 +1,18 @@
 import { makeAutoObservable } from 'mobx';
 import { StaticImageData } from 'next/image';
 
-export interface Item {
-  id: number;
-  name: string;
-  image: StaticImageData;
-  amount?: string;
+export interface OrderFormFields {
+  amount?: number;
   volume?: number;
   netWeight?: number;
   grossWeight?: number;
   cost?: number;
+}
+
+export interface Item extends OrderFormFields {
+  id: number;
+  name: string;
+  image: StaticImageData;
   key?: number;
 }
 
