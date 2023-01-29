@@ -148,5 +148,6 @@ export const StyledMobileHeaderContent = styled(MobileHeaderContent)`
   @media (max-width: 1200px) {
     width: 100vw;
     left: 0 !important;
+    transform: none;
   }
 `;

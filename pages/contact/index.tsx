@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react';
 import inst from '../../public/img/instagram.png';
 import fb from '../../public/img/facebook.png';
@@ -23,8 +22,13 @@ import {
 } from '../../styles/contact';
 
 const Contact = observer(() => {
-  const { back } = useRouter()
   const isContactFormOpen = myOrderFormData.getIsContactFormOpen();
+
+  useEffect(() => {
+    return () => {
+      myOrderFormData.setIsContactFormOpen(false);
+    }
+  }, [])
 
   return (
     <Wrapper>
@@ -63,7 +67,7 @@ const Contact = observer(() => {
       <DesktopContactForm />
       {isContactFormOpen && (
         <>
-          <StyledMobileHeaderContent onClick={back} />
+          <StyledMobileHeaderContent onClick={() => myOrderFormData.setIsContactFormOpen(false)} />
           <StyledMobilePopup>
           <ContactForm />
         </StyledMobilePopup>
