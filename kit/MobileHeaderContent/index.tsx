@@ -1,6 +1,5 @@
 import React, { FC, ReactNode, MouseEventHandler } from 'react';
-import Image from 'next/image';
-import backArrow from '../../public/img/arrow-back.svg';
+import BackArrow from '../../public/img/arrow-back.svg';
 import { Component, Button } from './style';
 
 interface Props {
@@ -13,7 +12,7 @@ const MobileHeaderContent: FC<Props> = ({ children, onClick, className }) => {
   return (
     <Component className={className}>
       <Button type="button" onClick={onClick}>
-        <Image src={backArrow} width={29} height={20} alt="" />
+        <BackArrow width={29} height={20} alt="" />
       </Button>
       {children}
     </Component>

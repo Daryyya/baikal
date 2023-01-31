@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Button from '../../kit/Button';
 import Input from '../../kit/Input';
 import { downXl } from '../../styles/mediaQuery';
+import MinusIcon from '../../public/img/minus.svg';
 
 export const StyledForm = styled.form`
   background-color: var(--semilight-blue);
@@ -56,7 +57,7 @@ export const AmountInput = styled(Input)`
   height: 53px;
 `;
 
-export const StyledMinus = styled.svg`
+export const StyledMinus = styled(MinusIcon)`
   position: relative;
   top: -5px;
 `;

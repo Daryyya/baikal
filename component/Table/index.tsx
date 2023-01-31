@@ -13,6 +13,7 @@ import {
   StyledImage,
   StyledTFoot,
   ResetButton,
+  CloseIcon,
 } from './style';
 
 const titles = [
@@ -83,10 +84,7 @@ const Table = observer(() => {
               <StyledCell>
                 <StyledCellContent>
                   <button type="button" onClick={() => myOrderFormData.removeItem(item)}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="red" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 4L15.5385 16" stroke="red" strokeWidth="1.5" strokeLinecap="round" />
-                      <path d="M16 4L4.46154 16" stroke="red" strokeWidth="1.5" strokeLinecap="round" />
-                    </svg>
+                    <CloseIcon />
                   </button>
                 </StyledCellContent>
               </StyledCell>

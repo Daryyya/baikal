@@ -1,9 +1,10 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { myOrderFormData } from '../../store/orderFormData';
-import { Wrapper, StyledP, DirectionP } from './style';
 import CartSum from '../CartSum';
+import ArrowIcon from '../../public/img/arrow.svg';
 import { myDirectionFormData } from '../../store/directionFormData';
+import { Wrapper, StyledP, DirectionP } from './style';
 
 const MobileCartSum = observer(() => {
   const totlaValue = myOrderFormData.getTotalValue();
@@ -15,9 +16,7 @@ const MobileCartSum = observer(() => {
       {from && to && (
         <DirectionP>
           <span>{from}</span>&nbsp;
-          <svg width="15" height="6" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#606F7A" stroke-width="1.5" />
-          </svg>
+          <ArrowIcon width="15" height="6" viewBox="0 0 27 11" />
           &nbsp;
           <span>{to}</span>,&nbsp;<span>{currency}</span>
         </DirectionP>

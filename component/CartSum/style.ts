@@ -77,6 +77,9 @@ export const StyledSaveLink = styled(Button)`
     position: relative;
     left: 8px;
     top: 1px;
+    & path {
+      stroke: var(--blue);
+    }
   }
   ${downXl} {
     justify-content: center;

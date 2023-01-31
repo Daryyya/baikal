@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
-import Tooltip from './Tooltip';
+import ArrowIcon from '../../public/img/arrowUp.svg';
 import { downXl, upXl } from '../../styles/mediaQuery';
+import Tooltip from './Tooltip';
 
 export const StyledForm = styled.form`
   position: relative;
@@ -53,10 +54,13 @@ export const StyledTooltipOne = styled(Tooltip)`
   }
 `;
 
-export const StyledSvgOne = styled.svg`
+export const StyledSvgOne = styled(ArrowIcon)`
   position: relative;
   top: 3px;
   margin-left: 13px;
+  & path {
+    stroke: var(--blue);
+  }
 `;
 
 export const StyledTooltipTwo = styled(Tooltip)`

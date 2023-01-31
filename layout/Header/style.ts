@@ -60,5 +60,8 @@ export const StyledP = styled.p`
   & svg {
     position: relative;
     bottom: 2px;
+    & path {
+      stroke: #606f7a;
+    }
   }
 `;

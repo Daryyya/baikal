@@ -2,6 +2,13 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 import { observer } from 'mobx-react';
+import ArrowIcon from '../../public/img/arrow.svg';
+import ControlledInput from './ControlledInput';
+import ControlledSelect from './ControlledSelect';
+import { currencies } from './currencies';
+import { chineseCities } from './chineseCities';
+import { Fields, myDirectionFormData } from '../../store/directionFormData';
+import { russianCities } from './russianCities';
 import {
   StyledForm,
   StyledButton,
@@ -12,12 +19,6 @@ import {
   DesktopButtonContent,
   MobileButtonContent,
 } from './style';
-import ControlledInput from './ControlledInput';
-import ControlledSelect from './ControlledSelect';
-import { currencies } from './currencies';
-import { chineseCities } from './chineseCities';
-import { Fields, myDirectionFormData } from '../../store/directionFormData';
-import { russianCities } from './russianCities';
 
 const HomeForm = observer(() => {
   const router = useRouter();
@@ -52,28 +53,20 @@ const HomeForm = observer(() => {
       <StyledButton variant="blue" type="submit">
         <DesktopButtonContent>
           Далее &nbsp;
-          <svg width="27" height="11" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="white" strokeWidth="1.5" />
-          </svg>
+          <ArrowIcon />
         </DesktopButtonContent>
         <MobileButtonContent>Выбрать мебель</MobileButtonContent>
       </StyledButton>
       {errors.from && (
         <StyledTooltipOne>
           Для начала заполните поля выше
-          <StyledSvgOne width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 2V22" stroke="#5DAAFF" strokeWidth="1.5" />
-            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" strokeWidth="1.5" />
-          </StyledSvgOne>
+          <StyledSvgOne width="12" height="22" viewBox="0 0 12 22" fill="none" />
         </StyledTooltipOne>
       )}
       {isDirty && Object.values(errors).length === 0 && (
         <StyledTooltipTwo>
           Теперь нажмите на кнопку “Далее”
-          <StyledSvgTwo width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 2V22" stroke="#5DAAFF" strokeWidth="1.5" />
-            <path d="M11 7L6 2L1 7" stroke="#5DAAFF" strokeWidth="1.5" />
-          </StyledSvgTwo>
+          <StyledSvgTwo width="12" height="22" viewBox="0 0 12 22" fill="none" />
         </StyledTooltipTwo>
       )}
     </StyledForm>

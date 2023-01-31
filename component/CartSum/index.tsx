@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { HTMLAttributes, FC } from 'react';
 import { myOrderFormData } from '../../store/orderFormData';
 import { StyledP, BottomLinksWrapper, StyledSaveLink, Sum, StyledContactButton } from './style';
+import Arrow from '../../public/img/arrow.svg';
 
 const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
   const { push } = useRouter();
@@ -26,9 +27,7 @@ const CartSum: FC<HTMLAttributes<HTMLDivElement>> = observer((props) => {
       <BottomLinksWrapper>
         <StyledSaveLink variant="outline" type="button">
           Сохранить расчёт
-          <svg width="27" height="11" viewBox="0 0 27 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 5.5H25M25 5.5L20.5 1M25 5.5L20.5 10" stroke="#5daaff" strokeWidth="1.5" />
-          </svg>
+          <Arrow />
         </StyledSaveLink>
         <StyledContactButton
           type="button"

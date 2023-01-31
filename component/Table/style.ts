@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import { downXl } from '../../styles/mediaQuery';
+import Close from '../../public/img/close.svg';
 
 export const StyledTable = styled.table`
   margin: 45px 0 40px;
@@ -122,5 +123,11 @@ export const ResetButton = styled.button`
 
   &:hover {
     opacity: 0.7;
+  }
+`;
+
+export const CloseIcon = styled(Close)`
+  & path {
+    stroke: red;
   }
 `;
