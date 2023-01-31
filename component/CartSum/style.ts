@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
 import { downXl } from '../../styles/mediaQuery';
-
 export const StyledP = styled.p`
   color: var(--grey);
   font-size: 23px;
@@ -77,6 +76,9 @@ export const StyledSaveLink = styled(Button)`
     position: relative;
     left: 8px;
     top: 1px;
+    & path {
+      stroke: var(--blue);
+    }
   }
   ${downXl} {
     justify-content: center;

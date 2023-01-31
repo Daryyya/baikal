@@ -24,6 +24,9 @@ export const DirectionP = styled.p`
   & svg {
     position: relative;
     bottom: 2px;
+    & path {
+      stroke: #606F7A;
+    }
   }
 `;
 

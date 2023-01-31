@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import React, { FC, useEffect, useRef, useState } from 'react';
-import edit from '../../../public/img/pencil.svg';
+import EditIcon from '../../../public/img/pencil.svg';
 import { StyledCellContent, Button, StyledInput } from './style';
 
 interface Props {
@@ -24,7 +23,7 @@ const CellContent: FC<Props> = ({ content, onChange }) => {
         <span>
           {content}
           <Button type="button" onClick={() => setIsEdit(true)}>
-            <Image src={edit} alt="редактировать" width={16} height={16} />
+            <EditIcon alt="редактировать" width={16} height={16} viewBox="0 0 18 18" />
           </Button>
         </span>
       )}

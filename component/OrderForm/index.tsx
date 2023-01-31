@@ -2,6 +2,7 @@ import React, { FC, useEffect } from 'react';
 import { observer } from 'mobx-react';
 import Link from 'next/link';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
+import PlusIcon from '../../public/img/plus.svg';
 import { myOrderFormData } from '../../store/orderFormData';
 import NumberInput from './NumberInput';
 import { FormFields } from './types';
@@ -68,16 +69,11 @@ const OrderForm: FC = observer(() => {
         <StyledText>Кол-во:</StyledText>
         <ButtonWrapper>
           <button onClick={() => setValue('amount', (amount || 0) - 1)} type="button" disabled={amount === 1}>
-            <StyledMinus width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 1L15 1" stroke="#5DAAFF" />
-            </StyledMinus>
+            <StyledMinus />
           </button>
           <AmountInput defaultValue={1} {...register('amount', { required: true, min: 1, valueAsNumber: true })} />
           <button onClick={() => setValue('amount', (amount || 0) + 1)} type="button">
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.5 0V15" stroke="#5DAAFF" />
-              <path d="M0 7.5L15 7.5" stroke="#5DAAFF" />
-            </svg>
+            <PlusIcon />
           </button>
         </ButtonWrapper>
       </AmountWrapper>
