@@ -25,7 +25,7 @@ const Header = observer(() => {
           <StyledP>
             <span>{from}</span>
             &nbsp;
-            <ArrowIcon width="15" height="6"  viewBox="0 0 27 11" />
+            <ArrowIcon width="15" height="6" viewBox="0 0 27 11" />
             &nbsp;
             <span>{to}</span>, &nbsp;
             <span>{currency}</span>

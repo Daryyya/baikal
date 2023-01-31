@@ -25,7 +25,7 @@ export const DirectionP = styled.p`
     position: relative;
     bottom: 2px;
     & path {
-      stroke: #606F7A;
+      stroke: #606f7a;
     }
   }
 `;

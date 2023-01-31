@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Button from '../../kit/Button';
 import { downXl } from '../../styles/mediaQuery';
+
 export const StyledP = styled.p`
   color: var(--grey);
   font-size: 23px;

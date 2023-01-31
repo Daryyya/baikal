@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useForm, SubmitHandler, useWatch } from 'react-hook-form';
 import { observer } from 'mobx-react';
-import ArrowIcon from '../../public/img/arrow.svg'
+import ArrowIcon from '../../public/img/arrow.svg';
 import ControlledInput from './ControlledInput';
 import ControlledSelect from './ControlledSelect';
 import { currencies } from './currencies';
@@ -53,7 +53,7 @@ const HomeForm = observer(() => {
       <StyledButton variant="blue" type="submit">
         <DesktopButtonContent>
           Далее &nbsp;
-          <ArrowIcon/>
+          <ArrowIcon />
         </DesktopButtonContent>
         <MobileButtonContent>Выбрать мебель</MobileButtonContent>
       </StyledButton>

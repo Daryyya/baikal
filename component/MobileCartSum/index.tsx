@@ -2,7 +2,7 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { myOrderFormData } from '../../store/orderFormData';
 import CartSum from '../CartSum';
-import ArrowIcon from '../../public/img/arrow.svg'
+import ArrowIcon from '../../public/img/arrow.svg';
 import { myDirectionFormData } from '../../store/directionFormData';
 import { Wrapper, StyledP, DirectionP } from './style';
 
